@@ -206,6 +206,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  countries
   country_select (~> 4.0)
   devise
   dotenv-rails
