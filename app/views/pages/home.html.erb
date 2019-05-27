@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>What is your home country?</h2>
+
+
+<%= form_tag do %>
+  <%= country_select("user", "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
+  <%= link_to "go", search_medications_path %>
+<% end %>
+
+
+
+<%= javascript_pack_tag 'select2' %>
+<%= stylesheet_pack_tag 'select2' %>
