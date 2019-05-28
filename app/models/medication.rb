@@ -4,8 +4,12 @@ class Medication < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_medication_and_ingredients,
-    against: [:medications, :ingredients ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    # against: [:local_name, :english_name ],
+    associated_against: {
+      ingredients: [:name]
+
     }
+    # using: {
+    #   tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    # }
 end
