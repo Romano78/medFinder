@@ -3,9 +3,12 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div id="movies">
         <% @medications.each do |medication| %>
+          <%= link_to medication_comparison_path(medication.id) do %>
+          <%= cl_image_tag(medication.remote_photo_url, width:300) %>
           <h2><%= medication.english_name %></h2>
+          <% end %>
           <% medication.ingredients.each do |ingredient| %>
-          <p><%= ingredient.name %></p>
+          <p>Active ingredient: <%= ingredient.name %></p>
           <% end %>
         <% end %>
       </div>
