@@ -1,14 +1,18 @@
-<%= @medication.english_name %>
-
 <%= form_tag medication_comparisons_path(@medication), method: :get do %>
   <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-  <%= submit_tag %>
+  <%= submit_tag "submit" %>
 <% end %>
+
+<h2><%= @medication.english_name %></h2>
+<%= image_tag @medication.photo_url %><br>
+<br>
+<br>
+
 
 <% @medications.each do |medication| %>
-  <p><%= medication.local_name %></p>
+  <h3><%= medication.local_name %></h3>
+  <%= link_to (image_tag (medication.photo_url)) %>
 <% end %>
-
 
 
 <%= javascript_pack_tag 'select2' %>
