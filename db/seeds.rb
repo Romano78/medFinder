@@ -21,6 +21,7 @@ puts "creating medications..."
   country: "RU",
   photo_url: "https://trimestri.ru/wp-content/uploads/2019/05/ibuprofen-pri-beremennosti.jpg",
   category: "Anti-inflammatory"
+  description: ""
   )
 
  ibuprofen_gel = Medication.create!(
@@ -29,7 +30,8 @@ puts "creating medications..."
   price: 89,
   country: "RU",
   photo_url: "https://attuale.ru/wp-content/uploads/2018/12/Opera-Snimok_2018-12-10_173045_spb.moezdorovie.ru_.png",
-  category: "Anti-inflammatory gel"
+  category: "Anti-inflammatory gel",
+  description: ""
   )
 
   paracetamol = Medication.create!(
@@ -38,7 +40,8 @@ puts "creating medications..."
   price: 15,
   country: "RU",
   photo_url: "https://avatars.mds.yandex.net/get-mpic/1361544/img_id3660477126329187001.jpeg/9hq",
-  category: "Pain syndrome of low and moderate intensity of various genesis"
+  category: "Pain syndrome of low and moderate intensity of various genesis",
+  description: ""
   )
 
   nurofen = Medication.create!(
@@ -47,7 +50,8 @@ puts "creating medications..."
   price: 99,
   country: "RU",
   photo_url: "https://media.gorzdrav.org/sys_master/product/h12/h3a/8818570067998.jpg",
-  category: "Analgesic, antipyretic and anti-inflammatory effect"
+  category: "Analgesic, antipyretic and anti-inflammatory effect",
+  description: ""
   )
 
   nurofen_forte = Medication.create!(
@@ -56,7 +60,8 @@ puts "creating medications..."
   price: 103,
   country: "RU",
   photo_url: "https://avatars.mds.yandex.net/get-mpic/96484/img_id5362760054367871942/9hq",
-  category: "Analgesic, antipyretic and anti-inflammatory effect"
+  category: "Analgesic, antipyretic and anti-inflammatory effect",
+  description: ""
   )
 
 
@@ -66,7 +71,8 @@ puts "creating medications..."
   price: 103,
   country: "RU",
   photo_url: "https://www.medlux.ru/img/drugs/16/md-91f2f02bb9301b802290369f052ba738..png",
-  category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough"
+  category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
+  description: ""
   )
 
   advil = Medication.create!(
@@ -75,7 +81,8 @@ puts "creating medications..."
    price: 17,
    country: "CA",
    photo_url: "https://dr9wvh6oz7mzp.cloudfront.net/i/2ed16c25bbd7e9818319863a5ea08a45_ra,w380,h380_pa,w380,h380.jpeg",
-   category: "Anti-inflammatory"
+   category: "Anti-inflammatory",
+   description: ""
    )
 
   advil_gel = Medication.create!(
@@ -84,7 +91,8 @@ puts "creating medications..."
    price: 25,
    country: "CA",
    photo_url: "https://www.soin-et-nature.com/27733-menu_default/advil-5-gel-100g-tube.jpg",
-   category: "Anti-inflammatory gel"
+   category: "Anti-inflammatory gel",
+   description: ""
    )
 
 
@@ -94,7 +102,8 @@ puts "creating medications..."
    price: 17,
    country: "CA",
    photo_url: "https://www.tylenol.ca/sites/tylenol_ca/files/styles/product_image/public/product-images/100025413_tyla_es_eztabs_100ct_ff_e_h.png",
-   category: "Analgesics (pain relievers) and antipyretics (fever reducers)"
+   category: "Analgesics (pain relievers) and antipyretics (fever reducers)",
+   description: ""
    )
 
   benylin = Medication.create!(
@@ -103,7 +112,8 @@ puts "creating medications..."
    price: 30,
    country: "CA",
    photo_url: "https://i5.walmartimages.ca/images/Large/919/399/6000197919399.jpg",
-   category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough"
+   category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
+   description: ""
    )
 
 
