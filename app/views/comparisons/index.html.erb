@@ -11,7 +11,7 @@
 
 <% @medications.each do |medication| %>
   <h3><%= medication.local_name %></h3>
-  <%= link_to (image_tag (medication.photo_url)) %>
+  <%= image_tag (medication.photo_url) %>
 <% end %>
 
 
