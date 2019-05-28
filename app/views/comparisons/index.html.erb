@@ -1,0 +1,15 @@
+<%= @medication.english_name %>
+
+<%= form_tag medication_comparisons_path(@medication), method: :get do %>
+  <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
+  <%= submit_tag %>
+<% end %>
+
+<% @medications.each do |medication| %>
+  <p><%= medication.local_name %></p>
+<% end %>
+
+
+
+<%= javascript_pack_tag 'select2' %>
+<%= stylesheet_pack_tag 'select2' %>
