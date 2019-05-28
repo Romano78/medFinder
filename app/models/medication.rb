@@ -12,6 +12,7 @@ class Medication < ApplicationRecord
         { name: ingredient.name }
       end
     end
+  end
 
   def country_name
     c = ISO3166::Country[country]
