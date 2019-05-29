@@ -1,19 +1,64 @@
-<%= form_tag medication_comparisons_path(@medication), method: :get do %>
-  <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-  <%= submit_tag "submit" %>
-<% end %>
 
-<h2><%= @medication.english_name %></h2>
 <%= cl_image_tag (@medication.photo) %><br>
 <br>
+<p>name: <%= @medication.english_name %></p>
+<p>category: <%= @medication.local_category %></p>
+  <% @medication.ingredients.each do |ingredient| %>
+    <p>active ingredient: <%= ingredient.name %></p>
+  <% end %>
+
 <br>
 
+<% if @medications.empty? %>
+  <p>Find medicine equivalent in</p>
+    <%= form_tag medication_comparisons_path(@medication), method: :get do %>
+      <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
+      <%= submit_tag "submit" %>
+    <% end %>
+<% else %>
+  <p>Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
+    <% @medications.each do |medication| %>
+    <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+      <%= cl_image_tag(medication.photo, width: 250)%>
+      <p>name: <%= medication.english_name %></p>
+      <% end %>
+      <% medication.ingredients.each do |ingredient| %>
+        <p>active ingredient: <%= ingredient.name %></p>
+      <% end %>
+      <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="profile-banner d-flex align-items-center" id="user-profile">
+                    <div class="container d-flex align-items-center">
+                      <%= cl_image_tag(medication.photo, width: 250) %>
+                      <div class="profile-content d-flex flex-column align-items-center">
+                        <p>name: <%= medication.english_name %></p>
+                        <p>category: <%= medication.local_category %></p>
+                        <% medication.ingredients.each do |ingredient| %>
+                        <p>active ingredient: <%= ingredient.name %></p>
+                        <% end %>
+                        <p>description: <%= medication.local_description %></p>
 
-<% @medications.each do |medication| %>
-  <h3><%= medication.local_name %></h3>
-  <%= cl_image_tag (medication.photo) %>
+                        <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication) %>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    <% end %>
 <% end %>
+
+
+
 
 
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
+
+
