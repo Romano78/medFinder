@@ -19,7 +19,7 @@ puts "creating medications..."
   english_name: "Ibuprofen",
 
   country: "RU",
-  photo: "https://trimestri.ru/wp-content/uploads/2019/05/ibuprofen-pri-beremennosti.jpg",
+  remote_photo_url: "https://trimestri.ru/wp-content/uploads/2019/05/ibuprofen-pri-beremennosti.jpg",
   local_category: "Anti-inflammatory",
   foreign_category: "противовоспалительный",
   local_description: "used for treating pain, fever, and inflammation. ",
@@ -30,7 +30,7 @@ puts "creating medications..."
   local_name: "Ибупрофен Гель",
   english_name: "Ibuprofen Gel",
   country: "RU",
-  photo: "https://attuale.ru/wp-content/uploads/2018/12/Opera-Snimok_2018-12-10_173045_spb.moezdorovie.ru_.png",
+  remote_photo_url: "https://attuale.ru/wp-content/uploads/2018/12/Opera-Snimok_2018-12-10_173045_spb.moezdorovie.ru_.png",
   local_category: "Anti-inflammatory gel",
   foreign_category: "противовоспалительный",
   local_description: "Treating pain and swelling due to strains, sprains, backache or arthritis",
@@ -42,7 +42,7 @@ puts "creating medications..."
   local_name: "Парацетамол",
   english_name: "Paracetamol",
   country: "RU",
-  photo: "https://avatars.mds.yandex.net/get-mpic/1361544/img_id3660477126329187001.jpeg/9hq",
+  remote_photo_url: "https://avatars.mds.yandex.net/get-mpic/1361544/img_id3660477126329187001.jpeg/9hq",
   local_category: "Pain syndrome of low and moderate intensity of various genesis",
   foreign_category: "обезболивающее и жаропонижающее",
   local_description: "used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.",
@@ -54,7 +54,7 @@ puts "creating medications..."
   local_name: "Нурофен®",
   english_name: "Nurofen®",
   country: "RU",
-  photo: "https://media.gorzdrav.org/sys_master/product/h12/h3a/8818570067998.jpg",
+  remote_photo_url: "https://media.gorzdrav.org/sys_master/product/h12/h3a/8818570067998.jpg",
   local_category: "Analgesic, antipyretic and anti-inflammatory effect",
   foreign_category: "Обезболивающее, жаропонижающее и противовоспалительное действие",
   local_description: "provides temporary relief of acute moderate pain and inflammation.",
@@ -67,7 +67,7 @@ puts "creating medications..."
   local_name: "Нурофен® Форте",
   english_name: "Nurofen® Forte",
   country: "RU",
-  photo: "https://uteka.ru/media/big/8/8c/88c9f64dde5c5eb066db8768c9d8db27.jpg",
+  remote_photo_url: "https://uteka.ru/media/big/8/8c/88c9f64dde5c5eb066db8768c9d8db27.jpg",
   local_category: "Analgesic, antipyretic and anti-inflammatory effect",
   foreign_category: "Обезболивающее, жаропонижающее и противовоспалительное действие",
   local_description: "used to relieve the symptoms of arthritis, fever, and menstrual and other types of pain.",
@@ -79,7 +79,7 @@ puts "creating medications..."
   local_name: "Туссин Плюс",
   english_name: "Tussin Plus",
   country: "RU",
-  photo: "https://www.medlux.ru/img/drugs/16/md-91f2f02bb9301b802290369f052ba738..png",
+  remote_photo_url: "https://www.medlux.ru/img/drugs/16/md-91f2f02bb9301b802290369f052ba738..png",
   local_category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
   foreign_category: "Облегчение симптомов простуды, гриппа, ОРВИ, сопровождающихся кашлем",
   local_description: "cough suppressant that works by decreasing the feeling of needing to cough.",
@@ -91,7 +91,7 @@ puts "creating medications..."
    english_name: "Advil",
 
    country: "CA",
-   photo: "https://dr9wvh6oz7mzp.cloudfront.net/i/2ed16c25bbd7e9818319863a5ea08a45_ra,w380,h380_pa,w380,h380.jpeg",
+   remote_photo_url: "https://dr9wvh6oz7mzp.cloudfront.net/i/2ed16c25bbd7e9818319863a5ea08a45_ra,w380,h380_pa,w380,h380.jpeg",
 
    local_category: "Anti-inflammatory",
    foreign_category: "противовоспалительный",
@@ -107,7 +107,7 @@ puts "creating medications..."
 
    country: "CA",
 
-   photo: "https://www.soin-et-nature.com/27733-menu_default/advil-5-gel-100g-tube.jpg",
+   remote_photo_url: "https://www.soin-et-nature.com/27733-menu_default/advil-5-gel-100g-tube.jpg",
 
    local_category: "Anti-inflammatory gel",
    foreign_category: "противовоспалительный",
@@ -121,7 +121,7 @@ puts "creating medications..."
    english_name: "Tylenol",
 
    country: "CA",
-   photo: "https://www.tylenol.ca/sites/tylenol_ca/files/styles/product_image/public/product-images/100025413_tyla_es_eztabs_100ct_ff_e_h.png",
+   remote_photo_url: "https://www.tylenol.ca/sites/tylenol_ca/files/styles/product_image/public/product-images/100025413_tyla_es_eztabs_100ct_ff_e_h.png",
 
    local_category: "Analgesics (pain relievers) and antipyretics (fever reducers)",
    foreign_category: "обезболивающее и жаропонижающее.",
@@ -137,7 +137,7 @@ puts "creating medications..."
 
    country: "CA",
 
-   photo: "https://i5.walmartimages.ca/images/Large/919/399/6000197919399.jpg",
+   remote_photo_url: "https://i5.walmartimages.ca/images/Large/919/399/6000197919399.jpg",
 
    local_category: "cough suppressants",
    foreign_category: "средства от кашля",
