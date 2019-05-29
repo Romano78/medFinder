@@ -4,14 +4,14 @@
 <% end %>
 
 <h2><%= @medication.english_name %></h2>
-<%= image_tag @medication.photo_url %><br>
+<%= cl_image_tag (@medication.photo) %><br>
 <br>
 <br>
 
 
 <% @medications.each do |medication| %>
   <h3><%= medication.local_name %></h3>
-  <%= image_tag (medication.photo_url) %>
+  <%= cl_image_tag (medication.photo) %>
 <% end %>
 
 
