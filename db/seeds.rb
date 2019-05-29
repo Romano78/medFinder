@@ -207,5 +207,9 @@ puts "creating medications..."
     ingredient_id: ibuprofen_ingredient.id,
     medication_id: advil_gel.id
   )
+
+
+  Medication.reindex!
+
   puts "finished"
 
