@@ -1,4 +1,5 @@
 
+
 <div>
   <div class=mf-navbar>
   <a href="/">
@@ -11,6 +12,10 @@
   <p>progress bar</p>
 </div>
 
+<div class="container">
+
+
+
 <h1>Titre1</h1>
 
 <h2>Titre2</h2>
@@ -20,11 +25,7 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto debitis neque, cumque, accusamus possimus quod numquam impedit laboriosam sit deleniti maxime quibusdam minima eum perferendis officiis unde aspernatur sint enim?</p>
 
 <form>
-  <input type="text" placeholder="placeholder">
-  <select name="" id="">
-    <option value="country">france</option>
-    <option value="country">russia</option>
-  </select>
+  <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
 </form>
 
 
@@ -37,8 +38,8 @@
   <div class="mf-regular-card">
     <img src="https://source.unsplash.com/random" alt="">
     <div class="regular-card-footer">
-      <h6>Titre6</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat accusantium qui unde id nesciunt enim sit commodi iure, eveniet ipsam molestiae animi, saepe sed officia architecto fugit necessitatibus! Eligendi, eum.</p>
+      <h6>Title6</h6>
+      <p>Description</p>
     </div>
   </div>
 </div>
@@ -48,7 +49,11 @@
   <p>medium-card</p>
   <div class="mf-medium-card">
     <img src="https://source.unsplash.com/random" alt="">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum error quam, quis repellendus et eius quos hic beatae incidunt accusamus atque alias sint cum officia aliquid velit enim odio veniam.</p>
+    <div class=medium-card-description>
+    <p>Name</p>
+    <p>Active Ingredients</p>
+    <p>Category</p>
+    </div>
   </div>
 </div>
 
@@ -59,12 +64,16 @@
     <img src="https://source.unsplash.com/random" alt="">
     <div class=big-card-description>
       <h6>Title6</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum error quam, quis repellendus et eius quos hic beatae incidunt accusamus atque alias sint cum officia aliquid velit enim odio veniam.</p>
+      <p>Name</p>
+      <p>Activ Ingredient</p>
+      <p>Description</p>
     </div>
       <div>
         <a href="#" class="mf-button">search</a>
       </div>
   </div>
+</div>
+
 </div>
 
 

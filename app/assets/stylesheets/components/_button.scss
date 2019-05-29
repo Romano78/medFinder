@@ -2,12 +2,15 @@
 
 #btn-styles {
   margin: 30px auto;
+  width: 80%;
 }
 .mf-button {
-// width: 276px;
+  width: 100%;
+  display: block;
 // height: 40px;
 background: $green-principal;
 color:white;
 padding:10px;
 margin:16px auto;
+text-align:center;
 }
