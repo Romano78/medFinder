@@ -10,5 +10,10 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  get "map", to: "pages#map"
+
+ resource :map, only: [:show] do
+  collection do
+    get :nearby_pharmacy
+  end
+ end
 end
