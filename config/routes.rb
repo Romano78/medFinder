@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  get "map", to: "pages#map"
 end
