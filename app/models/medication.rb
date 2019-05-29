@@ -2,6 +2,8 @@ class Medication < ApplicationRecord
   has_many :medications_ingredients
   has_many :ingredients, through: :medications_ingredients
   include AlgoliaSearch
+  mount_uploader :photo, PhotoUploader
+
 
   after_save { ingredients.each(&:touch) }
 
