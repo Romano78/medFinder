@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_211057) do
+ActiveRecord::Schema.define(version: 2019_05_28_215314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_211057) do
     t.string "foreign_category"
     t.string "local_description"
     t.string "foreign_description"
+    t.string "remote_photo_url"
   end
 
   create_table "medications_ingredients", force: :cascade do |t|

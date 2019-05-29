@@ -7,6 +7,7 @@ class MedicationsController < ApplicationController
 
       @medications = Medication.all
     end
+
   end
 
   def search

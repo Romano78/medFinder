@@ -19,6 +19,7 @@ puts "creating medications..."
   english_name: "Ibuprofen",
 
   country: "RU",
+  remote_photo_url: "https://trimestri.ru/wp-content/uploads/2019/05/ibuprofen-pri-beremennosti.jpg",
   photo_url: "https://trimestri.ru/wp-content/uploads/2019/05/ibuprofen-pri-beremennosti.jpg",
   local_category: "Anti-inflammatory",
   foreign_category: "противовоспалительный",
@@ -31,11 +32,14 @@ puts "creating medications..."
   english_name: "Ibuprofen Gel",
 
   country: "RU",
+  remote_photo_url: "https://attuale.ru/wp-content/uploads/2018/12/Opera-Snimok_2018-12-10_173045_spb.moezdorovie.ru_.png",
+
   photo_url: "https://attuale.ru/wp-content/uploads/2018/12/Opera-Snimok_2018-12-10_173045_spb.moezdorovie.ru_.png",
   local_category: "Anti-inflammatory gel",
   foreign_category: "противовоспалительный",
   local_description: "Treating pain and swelling due to strains, sprains, backache or arthritis",
   foreign_description: "используется для лечения боли, лихорадки и воспаления."
+
   )
 
   paracetamol = Medication.create!(
@@ -43,11 +47,15 @@ puts "creating medications..."
   english_name: "Paracetamol",
 
   country: "RU",
+
+  remote_photo_url: "https://avatars.mds.yandex.net/get-mpic/1361544/img_id3660477126329187001.jpeg/9hq",
+
   photo_url: "https://avatars.mds.yandex.net/get-mpic/1361544/img_id3660477126329187001.jpeg/9hq",
   local_category: "Pain syndrome of low and moderate intensity of various genesis",
   foreign_category: "обезболивающее и жаропонижающее",
   local_description: "used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.",
   foreign_description: "используется для лечения многих заболеваний, таких как головная боль, мышечные боли, артрит, боль в спине, зубная боль, простуда и лихорадка."
+
   )
 
   nurofen = Medication.create!(
@@ -55,11 +63,15 @@ puts "creating medications..."
   english_name: "Nurofen®",
 
   country: "RU",
+
+  remote_photo_url: "https://media.gorzdrav.org/sys_master/product/h12/h3a/8818570067998.jpg",
+
   photo_url: "https://media.gorzdrav.org/sys_master/product/h12/h3a/8818570067998.jpg",
   local_category: "Analgesic, antipyretic and anti-inflammatory effect",
   foreign_category: "Обезболивающее, жаропонижающее и противовоспалительное действие",
   local_description: "provides temporary relief of acute moderate pain and inflammation.",
   foreign_description: "используется для лечения боли, лихорадки и воспаления."
+
 
   )
 
@@ -68,11 +80,15 @@ puts "creating medications..."
   english_name: "Nurofen® Forte",
 
   country: "RU",
+
+  remote_photo_url: "https://uteka.ru/media/big/8/8c/88c9f64dde5c5eb066db8768c9d8db27.jpg",
+
   photo_url: "https://avatars.mds.yandex.net/get-mpic/96484/img_id5362760054367871942/9hq",
   local_category: "Analgesic, antipyretic and anti-inflammatory effect",
   foreign_category: "Обезболивающее, жаропонижающее и противовоспалительное действие",
   local_description: "used to relieve the symptoms of arthritis, fever, and menstrual and other types of pain.",
   foreign_description: "используется для облегчения симптомов артрита, лихорадки и менструальных и других видов боли."
+
 
   )
 
@@ -82,11 +98,15 @@ puts "creating medications..."
   english_name: "Tussin Plus",
 
   country: "RU",
+
+  remote_photo_url: "https://www.medlux.ru/img/drugs/16/md-91f2f02bb9301b802290369f052ba738..png",
+
   photo_url: "https://www.medlux.ru/img/drugs/16/md-91f2f02bb9301b802290369f052ba738..png",
   local_category: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
   foreign_category: "Облегчение симптомов простуды, гриппа, ОРВИ, сопровождающихся кашлем",
   local_description: "cough suppressant that works by decreasing the feeling of needing to cough.",
   foreign_description: "подавитель кашля, который работает, уменьшая чувство необходимости кашлять."
+
 
   )
 
@@ -95,11 +115,14 @@ puts "creating medications..."
    english_name: "Advil",
 
    country: "CA",
+   remote_photo_url: "https://dr9wvh6oz7mzp.cloudfront.net/i/2ed16c25bbd7e9818319863a5ea08a45_ra,w380,h380_pa,w380,h380.jpeg",
+
    photo_url: "https://dr9wvh6oz7mzp.cloudfront.net/i/2ed16c25bbd7e9818319863a5ea08a45_ra,w380,h380_pa,w380,h380.jpeg",
    local_category: "Anti-inflammatory",
    foreign_category: "противовоспалительный",
    local_description: "used for treating pain, fever, and inflammation.",
    foreign_description: "используется для лечения боли, лихорадки и воспаления."
+
 
    )
 
@@ -108,6 +131,9 @@ puts "creating medications..."
    english_name: "Advil Antalgic gel",
 
    country: "CA",
+
+   remote_photo_url: "https://www.soin-et-nature.com/27733-menu_default/advil-5-gel-100g-tube.jpg",
+
    photo_url: "https://www.soin-et-nature.com/27733-menu_default/advil-5-gel-100g-tube.jpg",
    local_category: "Anti-inflammatory gel",
    foreign_category: "противовоспалительный",
@@ -121,12 +147,15 @@ puts "creating medications..."
    english_name: "Tylenol",
 
    country: "CA",
+   remote_photo_url: "https://www.tylenol.ca/sites/tylenol_ca/files/styles/product_image/public/product-images/100025413_tyla_es_eztabs_100ct_ff_e_h.png",
+
    photo_url: "https://www.tylenol.ca/sites/tylenol_ca/files/styles/product_image/public/product-images/100025413_tyla_es_eztabs_100ct_ff_e_h.png",
    local_category: "Analgesics (pain relievers) and antipyretics (fever reducers)",
    foreign_category: "обезболивающее и жаропонижающее.",
    local_description: "used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.",
    foreign_description: "
    используется для лечения многих состояний, таких как головная боль, мышечные боли, артрит, боль в спине, зубная боль, простуда и лихорадка"
+
    )
 
   benylin = Medication.create!(
@@ -134,11 +163,15 @@ puts "creating medications..."
    english_name: "Benylin",
 
    country: "CA",
+
+   remote_photo_url: "https://i5.walmartimages.ca/images/Large/919/399/6000197919399.jpg",
+
    photo_url: "https://i5.walmartimages.ca/images/Large/919/399/6000197919399.jpg",
    local_category: "cough suppressants",
    foreign_category: "средства от кашля",
    local_description: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
    foreign_description: "Облегчение симптомов простуды, гриппа, ОРВИ, сопровождающихся кашлем"
+
 
    )
 
