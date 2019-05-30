@@ -1,0 +1,10 @@
+<%= cl_image_tag (@medication2.photo), width:250 %><br>
+<br>
+<p>name: <%= @medication2.english_name %></p>
+<p>category: <%= @medication2.local_category %></p>
+  <% @medication2.ingredients.each do |ingredient| %>
+    <p>active ingredient: <%= ingredient.name %></p>
+  <% end %>
+
+<button><%= link_to nearby_pharmacy_map_path %> Search for nearest pharmacy</button>
+

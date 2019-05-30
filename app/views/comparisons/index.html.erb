@@ -17,6 +17,7 @@
     <% end %>
 <% else %>
   <p>Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
+    <div id="medication2">
     <% @medications.each do |medication| %>
     <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
       <%= cl_image_tag(medication.photo, width: 250)%>
@@ -40,7 +41,7 @@
                         <% end %>
                         <p>description: <%= medication.local_description %></p>
 
-                        <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication) %>
+                        <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication), remote: true %>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
@@ -52,9 +53,8 @@
             </div>
       </div>
     <% end %>
+  </div>
 <% end %>
-
-
 
 
 
