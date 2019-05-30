@@ -1,1 +1,13 @@
+
 <%= @medication.local_name %>
+
+<div class="profile-banner d-flex align-items-center" id="user-profile">
+  <div class="container d-flex align-items-center active" id="local">
+    <%= cl_image_tag(@medication.photo) %>
+    <div class="profile-content d-flex flex-column align-items-center">
+      <p>Name: <%= @medication.english_name %></p>
+      <p>Category: <%= @medication.local_category %></p>
+    </div>
+  </div>
+</div>
+
