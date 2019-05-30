@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       post :search
     end
   end
+  get "/mf_styles", to:"pages#mf_styles"
 end
