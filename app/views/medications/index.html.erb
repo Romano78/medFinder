@@ -1,3 +1,4 @@
+<%= render "shared/progressbar" %>
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -10,6 +11,8 @@
           <% medication.ingredients.each do |ingredient| %>
             <p>Active ingredient: <%= ingredient.name %></p>
           <% end %>
+
+
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
