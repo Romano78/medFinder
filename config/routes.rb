@@ -10,5 +10,14 @@ Rails.application.routes.draw do
       post :search
     end
   end
+
+
+ resource :map, only: [:show] do
+  collection do
+    get :nearby_pharmacy
+  end
+ end
+  
   get "/mf_styles", to:"pages#mf_styles"
+
 end
