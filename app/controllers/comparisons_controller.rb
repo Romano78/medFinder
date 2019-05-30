@@ -1,5 +1,7 @@
 class ComparisonsController < ApplicationController
   def index
+    session[:home_med] = params[:medication_id]
+    session[:destination] = params[:country]
     @medication = Medication.find(params[:medication_id])
     @medications = Medication.where(country: params[:country])
     @medications = @medications.select do |medication|
