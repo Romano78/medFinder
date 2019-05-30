@@ -22,4 +22,3 @@ class ComparisonsController < ApplicationController
     end
   end
 end
-
