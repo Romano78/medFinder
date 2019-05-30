@@ -1,12 +1,16 @@
-<h2>What is your home country?</h2>
+<div class="container d-flex flex-column justify-content-center align-items-center fullheight">
+  <div class=text-center>
+  <h1 class="mf-title1">Med Travel</h1>
+  <p class="tagline">find the equivalent of your  local medicine</p>
+  </div>
 
 
-<%= form_tag(search_medications_path) do %>
-  <%= country_select("user", "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-  <%= submit_tag "go" %>
-<% end %>
+  <%= form_tag(search_medications_path, class:"w-75") do %>
+    <%= country_select("user", "country", { include_blank: 'What is your home country' }, {class: "country-selection select"}) %>
+    <%= submit_tag "search" ,class:"mf-button"%>
+  <% end %>
 
-
+</div>
 
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
