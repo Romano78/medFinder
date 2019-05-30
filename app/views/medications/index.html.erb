@@ -2,20 +2,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-
-      <div class="medication-cards">
+      <div id="movies">
         <% @medications.each do |medication| %>
-
-
-
-          <%= link_to medication_comparison_path(medication.id),class: 'mf-regular-card', data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+          <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
             <%= cl_image_tag(medication.photo, width:300) %>
             <h2><%= medication.english_name %></h2>
-
-            <% medication.ingredients.each do |ingredient| %>
-              <p>Active ingredient: <%= ingredient.name %></p>
-            <% end %>
           <% end %>
+          <% medication.ingredients.each do |ingredient| %>
+            <p>Active ingredient: <%= ingredient.name %></p>
+          <% end %>
+
 
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -45,11 +41,7 @@
               </div>
             </div>
           </div>
-          <!-- end of the modal -->
-
         <% end %>
-        <!-- end of each medications -->
-
       </div>
 
   <%= link_to "search page", search_medications_path %>
