@@ -1,49 +1,24 @@
 .mf-title1{
-// position: absolute;
-// left: 10.13%;
-// right: 35.47%;
-// top: 2.03%;
-// bottom: 95.61%;
 
-font-family:$headers-font;
-font-style: normal;
-font-weight: bold;
 font-size: 40px;
-line-height: 49px;
-color: #dark-gray;
+color: $dark-gray;
 
 }
 
 .mf-title2 {
-// position: absolute;
-// left: 10.13%;
-// right: 64.27%;
-// top: 6.04%;
-// bottom: 92.08%;
 
-font-family: $headers-font;
-font-style: normal;
-font-weight: bold;
 font-size: 32px;
-line-height: 39px;
-color: #dark-gray;
+color: $dark-gray;
 
 }
 
 .mf-title3 {
 
-// position: absolute;
-// left: 10.13%;
-// right: 68%;
-// top: 9.61%;
-// bottom: 88.75%;
-
-font-family: $headers-font;
-font-style: normal;
 font-weight: 600;
-font-size: 28px;
-line-height: 34px;
-
-color: #dark-gray;
+font-size: 24px;
+color: $dark-gray;
+text-align:center;
 
 }
+
+
