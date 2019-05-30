@@ -1,0 +1,70 @@
+<%  @home_country = session[:home_country]
+    @query = session[:query]
+    if session[:home_med]
+      @home_med = Medication.find(session[:home_med])
+    else
+      @home_med = nil
+    end
+    @destination = session[:destination]
+    if session[:destination_med]
+      @destination_med = Medication.find(session[:destination_med])
+    else
+      @destination_med = nil
+    end  %>
+
+
+<div class="progress">
+  <div class="progress-step <%= @home_country ? "active" : "" %>">
+    <div class="circle-fill">
+    </div>
+      <% if @home_country %>
+        <p><%= ISO3166::Country[@home_country.capitalize] %>/</p>
+      <% else %>
+        <p>Home country/</p>
+      <% end %>
+  </div>
+  <div class="progress-step <%= @query ? "active" : "" %>">
+    <div class="circle-fill">
+    </div>
+      <% if @query %>
+        <p><%= @query.capitalize %>/</p>
+      <% else %>
+        <p>Search medication/</p>
+      <% end %>
+  </div>
+  <div class="progress-step <%= @home_med ? "active" : "" %>">
+    <div class="circle-fill">
+    </div>
+    <div>
+      <% if @home_med %>
+        <p><%= @home_med.local_name %>/</p>
+      <% else %>
+        <p>Selected medication/</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="progress-step <%= @destination ? "active" : "" %>">
+    <div class="circle-fill">
+    </div>
+    <div>
+      <% if @destination %>
+        <p><%= ISO3166::Country[@destination.capitalize] %>/</p>
+      <% else %>
+        <p>Visiting country/</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="progress-step <%= @destination_med ? "active" : "" %>">
+    <div class="circle-fill">
+    </div>
+    <div>
+      <% if @destination_med %>
+        <p><%= @destination_med.local_name %>/</p>
+      <% else %>
+        <p>Destination medication/</p>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
