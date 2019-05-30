@@ -1,11 +1,10 @@
 
-select {
+select,
+#search_query {
 display:block;
-//width:calc(100% - 15px);
-width:100%;
+width:90%;
+height: 40px;
 background-color: $lightest-gray;
 color:$light-gray;
 text-align-last:center;
-//margin-right: 20px;
-height: 40px;
 }

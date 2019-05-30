@@ -1,26 +1,20 @@
 .mf-footer {
-  height:36px;
+  height:40px;
   bottom: 0px;
-  color: $green-secondary;
+  background-color: $green-secondary;
   box-shadow: 0px 3px 7px rgba(118,118,118,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
     &-title {
-      left: 25.6%;
-      right: 22.67%;
-      top: 0%;
-      bottom: 0%;
-
       font-family: $body-font;
       font-style: normal;
       font-weight: normal;
       font-size: 10px;
-      line-height: 12px;
-      display: flex;
-      align-items: center;
-      text-align: justify;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
-
+      margin-bottom: 0;
       color: $green-principal;
 
     }
