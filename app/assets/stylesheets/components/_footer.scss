@@ -1,0 +1,32 @@
+.mf-footer {
+  position: absolute;
+  width: 375px;
+  height: 36px;
+  left: calc(50% - 375px/2);
+  bottom: 0px;
+  color: $green-secondary;
+
+  &-title {
+    position: absolute;
+    left: 25.6%;
+    right: 22.67%;
+    top: 0%;
+    bottom: 0%;
+
+    font-family: $body-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    color: $green-principal;
+
+  }
+}
+
+

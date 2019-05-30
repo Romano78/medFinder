@@ -1,9 +1,9 @@
 <h2>What is your home country?</h2>
 
 
-<%= form_tag do %>
+<%= form_tag(search_medications_path) do %>
   <%= country_select("user", "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-  <%= link_to "go", search_medications_path %>
+  <%= submit_tag "go" %>
 <% end %>
 
 

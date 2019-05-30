@@ -1,0 +1,22 @@
+
+// input {
+// width:100px;
+// background-color:$lightest-gray;
+// text-align:center
+
+// }
+
+// ::placeholder {
+//   color:$light-gray;
+// }
+
+select {
+display:block;
+//width:calc(100% - 15px);
+width:100%;
+background-color: $lightest-gray;
+color:$light-gray;
+text-align-last:center;
+//margin-right: 20px;
+height: 40px;
+}
