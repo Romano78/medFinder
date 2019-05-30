@@ -1,6 +1,5 @@
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css'
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -10,26 +9,50 @@ const initMapbox = () => {
       fetch(`/map/nearby_pharmacy?lat=${data.coords.latitude}&lng=${data.coords.longitude}`)
         .then(response => response.json())
         .then((pharmacyData) => {
-          const pharmacy = [pharmacyData.lng, pharmacyData.lat];
-          const user = [data.coords.longitude, data.coords.latitude];
+
+           // const pharmacy = [pharmacyData.lng, pharmacyData.lat];
+          const user = { lng: data.coords.longitude, lat:data.coords.latitude };
+
+            console.log(pharmacyData)
 
           const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v10',
-            bounds: [pharmacy, user],
-            fitBoundsOptions: { padding: 70, maxZoom: 17 }
+            style: 'mapbox://styles/mapbox/streets-v10'
           });
 
-          new mapboxgl.Marker()
-            .setLngLat(pharmacy)
-            .addTo(map);
+          pharmacyData.forEach((pharmacy) => {
+            const popup = new mapboxgl.Popup().setHTML(pharmacy.info_window);
 
-          new mapboxgl.Marker()
+            const pharmacyMarker = new mapboxgl.Marker()
+              .setLngLat(pharmacy)
+              .setPopup(popup)
+              .addTo(map);
+              setMarkerColor(pharmacyMarker, "#0cb25f")
+
+
+          });
+
+          const userMarker = new mapboxgl.Marker()
             .setLngLat(user)
             .addTo(map);
+
+          fitMapToMarkers(map, [...pharmacyData, user]);
         });
+
     })
   }
+};
+
+function setMarkerColor(marker, color) {
+    var $elem = jQuery(marker.getElement());
+    $elem.find('svg g[fill="' + marker._color + '"]').attr('fill', color);
+    marker._color = color;
+}
+
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, animate: false });
 };
 
 export { initMapbox };
