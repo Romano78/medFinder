@@ -1,0 +1,15 @@
+function addComparison(medicationHTML) {
+  const medication2 = document.getElementById('medication2');
+  medication2.innerHTML = medicationHTML;
+
+  element = document.querySelector(".modal-backdrop.show");
+  element.remove();
+
+  element2 = document.querySelector(".modal-open");
+  element2.classList.remove("modal-open");
+
+}
+
+
+addComparison('<%= j render "medication2", medication2: @medication2 %>');
+// addComparison('<p>test</p>');
