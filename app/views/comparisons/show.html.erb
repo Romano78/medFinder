@@ -1,0 +1,14 @@
+<div class="profile-banner d-flex align-items-center" id="user-profile">
+  <div class="container d-flex align-items-center">
+    <%= cl_image_tag(@medication.photo) %>
+    <div class="profile-content d-flex flex-column align-items-center">
+      <p>Name: <%= @medication.local_name %></p>
+      <p>Category: <%= @medication.local_category %></p>
+
+
+      <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>
+
+
+    </div>
+  </div>
+</div>

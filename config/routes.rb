@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :comparison, only: [:show]
 
     collection do
-      get :search
+      post :search
     end
   end
   get "/mf_styles", to:"pages#mf_styles"

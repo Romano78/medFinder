@@ -8,5 +8,6 @@ class ComparisonsController < ApplicationController
   end
 
   def show
+    @medication = Medication.find(params[:medication_id])
   end
 end
