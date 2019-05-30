@@ -1,7 +1,12 @@
+
+<%= render "shared/progressbar" %>
+<div class="container mt-5">
+  <h2>What medication are you searching for</h2>
 <div class="container d-flex flex-column justify-content-center align-items-center fullheight">
 
 <div class= text-center>
   <h2>What medication are you searching for?</h2>
+
   <%= form_tag medications_path, method: :get do |f| %>
 </div>
 
@@ -10,7 +15,8 @@
 
       <button name="button" type="submit" class="mf-button">
 
-      <input type="text" name="country" id="country_input"  value="<%= @country %>"/>
+
+      <input type="text" name="country" id="country_input" value="<%= @country %>"/>
 
         <i class="fas fa-search"></i> Search
       </button>
