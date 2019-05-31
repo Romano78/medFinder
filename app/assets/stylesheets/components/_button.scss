@@ -6,7 +6,7 @@
 // }
 
 .mf-button {
-  width: 100%;
+  width: 90%;
   display: block;
 // height: 40px;
 background: $green-principal;
@@ -14,4 +14,8 @@ color:white;
 padding:10px;
 margin:16px auto;
 text-align:center;
+}
+
+#country_input {
+  display: none;
 }

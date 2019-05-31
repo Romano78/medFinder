@@ -1,6 +1,7 @@
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css'
 const initMapbox = () => {
+
   const mapElement = document.getElementById('map');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -13,12 +14,13 @@ const initMapbox = () => {
            // const pharmacy = [pharmacyData.lng, pharmacyData.lat];
           const user = { lng: data.coords.longitude, lat:data.coords.latitude };
 
-            console.log(pharmacyData)
+          console.log(pharmacyData)
 
           const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v10'
           });
+
 
           pharmacyData.forEach((pharmacy) => {
             const popup = new mapboxgl.Popup().setHTML(pharmacy.info_window);
