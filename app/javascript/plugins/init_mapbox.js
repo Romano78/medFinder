@@ -5,12 +5,15 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
+
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     navigator.geolocation.getCurrentPosition((data) => {
+      console.log(data.coords.latitude)
+      console.log(data.coords.longitude)
       fetch(`/map/nearby_pharmacy?lat=${data.coords.latitude}&lng=${data.coords.longitude}`)
         .then(response => response.json())
         .then((pharmacyData) => {
-
+          console.log(pharmacyData)
            // const pharmacy = [pharmacyData.lng, pharmacyData.lat];
           const user = { lng: data.coords.longitude, lat:data.coords.latitude };
 
