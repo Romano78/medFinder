@@ -31,7 +31,8 @@ const initMapbox = () => {
             profile: 'mapbox/walking'
 
           });
-          directions.setOrigin([data.coords.longitude, data.coords.latitude])
+
+          directions.setOrigin([37.6173, 55.7558])
           directions.setDestination([pharmacyData[0].lng, pharmacyData[0].lat])
           map.addControl(directions);
 
