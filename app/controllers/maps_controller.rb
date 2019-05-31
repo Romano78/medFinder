@@ -10,7 +10,6 @@ class MapsController < ApplicationController
     results = JSON.parse(response)
 
 
-
     first_five = results["results"][0..4].map do |pharmacy|
       pharmacy_hash = pharmacy["geometry"]["location"]
       pharmacy_hash[:info_window] = render_to_string(partial: "info_window", locals: { name: pharmacy["name"] })
@@ -19,5 +18,4 @@ class MapsController < ApplicationController
     render json: first_five
   end
 end
-
 
