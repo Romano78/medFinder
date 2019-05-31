@@ -29,7 +29,6 @@
 <!--       <div class="cards-carousel"> -->
 
       <% @medications.each do |medication| %>
-
         <div class="medium-card-country-info">
           <%= cl_image_tag(medication.photo, width: 250)%>
           <div class='medium-card-description'>
@@ -40,7 +39,6 @@
             <% medication.ingredients.each do |ingredient| %>
               <p>active ingredient: <%= ingredient.name %></p>
             <% end %>
-
           </div>
           <!-- end of medium-card-description -->
         </div>
@@ -90,11 +88,9 @@
 <!-- end of container -->
 
 
-
-
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
-<%= javascript_pack_tag 'card_carousel' %>
+<%#= javascript_pack_tag 'card_carousel' %>
 <%#= stylesheet_pack_tag 'slick-carousel/slick' %>
 
 
