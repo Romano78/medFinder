@@ -1,6 +1,11 @@
-
-
 <%= render "shared/progressbar" %>
+
+<%= form_tag medication_comparisons_path(@medication), method: :get do %>
+  <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
+  <%= submit_tag "submit" %>
+<% end %>
+
+
 
 
 <div class="mf-medium-card">
