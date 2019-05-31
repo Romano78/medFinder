@@ -1,5 +1,11 @@
 .fullheight {
+  height: calc(100vh - 86px);
 
-  height: calc(100vh - 72px);
+  &.with-progressbar {
+    height: calc(100vh - 102px);
+  }
+
 
 }
+
+
