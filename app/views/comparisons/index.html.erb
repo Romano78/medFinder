@@ -1,6 +1,6 @@
 <%= render "shared/progressbar" %>
 
-<div class="container">
+<div class="container-comparisons">
   <div class="mf-medium-card">
     <%= cl_image_tag (@medication.photo) %>
     <div class=medium-card-description>
@@ -14,7 +14,7 @@
 
   <br>
 
-  <div class = "medium-card-country-info">
+  <div>
   <% if @medications.empty? %>
     <p style="font-size:16px;">Find medicine equivalent in: </p>
       <%= form_tag medication_comparisons_path(@medication), method: :get do %>
@@ -23,64 +23,60 @@
       <% end %>
   <% else %>
       <div id="medication2">
-      <p style="font-size:16px;">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
+      <p style="font-size:14px;text-align:center">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
             <% @medications.each do |medication| %>
-        <div>
-            <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+          <div class = "medium-card-country-info">
               <%= cl_image_tag(medication.photo, width: 250)%>
+            <div class=medium-card-description>
+              <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
               <p>name: <%= medication.english_name %></p>
               <% end %>
               <% medication.ingredients.each do |ingredient| %>
                 <p>active ingredient: <%= ingredient.name %></p>
               <% end %>
-        </div>
+            </div>
+          </div>
       </div>
   </div>
+</div>
 
 
 
+  <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="profile-banner d-flex align-items-center" id="user-profile">
+                <div class="mf-big-card">
+                  <%= cl_image_tag(medication.photo, width: 250) %>
+                  <div>
+                    <p>name: <%= medication.english_name %></p>
+                    <p>category: <%= medication.local_category %></p>
+                    <% medication.ingredients.each do |ingredient| %>
+                    <p>active ingredient: <%= ingredient.name %></p>
+                    <% end %>
+                    <p>description: <%= medication.local_description %></p>
 
-
-
-
-
-
-
-
-
-      <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <div class="profile-banner d-flex align-items-center" id="user-profile">
-                    <div class="container d-flex align-items-center">
-                      <%= cl_image_tag(medication.photo, width: 250) %>
-                      <div class="profile-content d-flex flex-column align-items-center">
-                        <p>name: <%= medication.english_name %></p>
-                        <p>category: <%= medication.local_category %></p>
-                        <% medication.ingredients.each do |ingredient| %>
-                        <p>active ingredient: <%= ingredient.name %></p>
-                        <% end %>
-                        <p>description: <%= medication.local_description %></p>
-
-                        <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication), remote: true %>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
+                    <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication), remote: true %>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-      </div>
-    <% end %>
+          </div>
+        </div>
   </div>
+<% end %>
+</div>
 <% end %>
 
 
 
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
+
+
 
 

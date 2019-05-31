@@ -18,9 +18,9 @@
               <div class="modal-content">
                 <div class="modal-body">
                   <div class="profile-banner d-flex align-items-center" id="user-profile">
-                    <div class="container d-flex align-items-center">
+                    <div class="mf-big-card">
                       <%= cl_image_tag(medication.photo, width: 250) %>
-                      <div class="profile-content d-flex flex-column align-items-center">
+                      <div>
                         <p>Name: <%= medication.local_name %></p>
                         <p>Category: <%= medication.local_category %></p>
                         <% medication.ingredients.each do |ingredient| %>
