@@ -25,18 +25,24 @@ const initMapbox = () => {
             style: 'mapbox://styles/mapbox/streets-v10'
           });
 
-          const directions = new MapboxDirections ({
+          fitMapToMarkers(map, [...pharmacyData, user]);
+
+          const directions = new MapboxDirections({
             accessToken: mapElement.dataset.mapboxApiKey,
             unit: 'metric',
-            profile: 'mapbox/walking'
-
+            profile: 'mapbox/walking',
+            controls: {
+              inputs: false,
+              instructions: false,
+              profileSwitcher: false
+            },
+            flyTo: false
           });
+
 
           directions.setOrigin([37.6173, 55.7558])
           directions.setDestination([pharmacyData[0].lng, pharmacyData[0].lat])
           map.addControl(directions);
-
-
 
           pharmacyData.forEach((pharmacy) => {
             const popup = new mapboxgl.Popup().setHTML(pharmacy.info_window);
@@ -45,18 +51,13 @@ const initMapbox = () => {
               .setLngLat(pharmacy)
               .setPopup(popup)
               .addTo(map);
-              setMarkerColor(pharmacyMarker, "#0cb25f")
-
-
+            setMarkerColor(pharmacyMarker, "#0cb25f")
           });
 
           const userMarker = new mapboxgl.Marker()
             .setLngLat(user)
             .addTo(map);
-
-          fitMapToMarkers(map, [...pharmacyData, user]);
         });
-
     })
   }
 };
@@ -70,7 +71,7 @@ function setMarkerColor(marker, color) {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, animate: false });
+  map.fitBounds(bounds, { padding: 70, animate: false });
 };
 
 export { initMapbox };
