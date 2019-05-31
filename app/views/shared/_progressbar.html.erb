@@ -57,12 +57,8 @@
   <div class="progress-step <%= @destination_med ? "active" : "" %>">
     <div class="circle-fill">
     </div>
-    <div>
-      <% if @destination_med %>
-        <p><%= @destination_med.local_name %>/</p>
-      <% else %>
-        <p>Destination medication/</p>
-      <% end %>
+    <div id="destination-med">
+      <p>Destination medication/</p>
     </div>
   </div>
 
