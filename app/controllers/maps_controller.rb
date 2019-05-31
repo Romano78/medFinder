@@ -3,6 +3,7 @@ require "json"
 
 class MapsController < ApplicationController
   def show
+
   end
 
   def nearby_pharmacy

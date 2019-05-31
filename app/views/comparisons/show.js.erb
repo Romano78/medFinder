@@ -11,6 +11,9 @@ function addComparison(medicationHTML) {
   const progressbar = document.getElementById('destination-med')
   progressbar.innerHTML = '<%= @medication2.local_name %>'
 
+  const mapLink= document.querySelector(".mapsearch");
+  mapLink.classList.remove("hidden");
+
 }
 
 

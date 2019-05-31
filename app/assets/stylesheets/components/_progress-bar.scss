@@ -8,4 +8,45 @@ color:$green-principal;
 color:$green-secondary;
 }
 
+.progress-container {
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+}
 
+.prog-line {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-right: auto;
+  margin-left: auto;
+  align-content: center;
+}
+
+.progress-step {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $dark-gray;
+  font-size: 1.5vw;
+}
+
+.circle-fill {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: $green-secondary;
+}
+
+.active {
+  background: $green-principal;
+}
+
+.prog-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
