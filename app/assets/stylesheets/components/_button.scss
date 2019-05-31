@@ -19,3 +19,18 @@ text-align:center;
 #country_input {
   display: none;
 }
+
+.mf-button-secondary {
+width: 90%;
+display: block;
+border: 3px solid $green-principal;
+color: $green-principal;
+padding:10px;
+margin:16px auto;
+text-align:center;
+font-size: 25px;
+&:hover {
+    text-decoration: none;
+    color: $green-principal;
+  }
+}

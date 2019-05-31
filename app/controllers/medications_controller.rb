@@ -11,6 +11,8 @@ class MedicationsController < ApplicationController
   end
 
   def search
-    session[:home_country] = params[:user][:country]
+    if params[:user]
+      session[:home_country] = params[:user][:country]
+    end
   end
 end
