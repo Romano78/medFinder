@@ -1,18 +1,16 @@
 <%= render "shared/progressbar" %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <div id="movies">
+    <div class="col-sm-8 offset-sm-2 mt-5">
+      <div id="medication-card">
         <% @medications.each do |medication| %>
-          <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+          <%= link_to medication_comparison_path(medication.id), class: "mf-regular-card", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
             <%= cl_image_tag(medication.photo, width:300) %>
             <h2><%= medication.english_name %></h2>
-          <% end %>
           <% medication.ingredients.each do |ingredient| %>
             <p>Active ingredient: <%= ingredient.name %></p>
           <% end %>
-
-
+          <% end %>
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -44,7 +42,7 @@
         <% end %>
       </div>
 
-  <%= link_to "search page", search_medications_path %>
+  <%= link_to "Back", search_medications_path, method: "post", class:"mf-button-secondary"%>
 
     </div>
   </div>
