@@ -21,6 +21,7 @@ const initMapbox = () => {
             style: 'mapbox://styles/mapbox/streets-v10'
           });
 
+
           pharmacyData.forEach((pharmacy) => {
             const popup = new mapboxgl.Popup().setHTML(pharmacy.info_window);
 
