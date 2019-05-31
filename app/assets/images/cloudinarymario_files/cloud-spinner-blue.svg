@@ -1,0 +1,41 @@
+<svg class="spinner" viewBox="-4 -4 151 100" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css"><![CDATA[
+      @keyframes colors {
+        0% { stroke: #0078FF; }
+          50% { stroke: #0e2f5a; }
+          100% { stroke: #0078FF; }
+      }
+
+      @keyframes dash {
+       0% { stroke-dashoffset: 560; }
+       50% {
+          stroke-dashoffset: 0;
+       }
+       100% {   stroke-dashoffset: 560; }
+      }
+      @-webkit-keyframes colors {
+        0% { stroke: #0078ff; }
+          50% { stroke: #0e2f5a; }
+          100% { stroke: #0078ff; }
+      }
+
+      @-webkit-keyframes dash {
+       0% { stroke-dashoffset: 560; }
+       50% {
+          stroke-dashoffset: 0;
+       }
+       100% {   stroke-dashoffset: 560;
+       }
+      }
+      .path {
+        stroke-dasharray: 280;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+        -webkit-animation:
+          dash 2s ease-in-out infinite, colors 8s ease-in-out infinite;
+        animation:
+          dash 2s ease-in-out infinite, colors 8s ease-in-out infinite;
+      }
+    ]]></style>
+  <path class="path" d="M121.663 90.638c-1.796 0-99.33-.498-101.474-1.478C8.685 83.877 1.25 72.196 1.25 59.396c0-16.656 12.797-30.61 29.052-32.323 7.49-15.706 23.186-25.707 40.714-25.707 20.98 0 39.215 14.752 43.945 34.907 15.09.245 27.29 12.63 27.29 27.822 0 11.968-7.738 22.55-19.256 26.33" stroke-width="9" stroke-linecap="round" fill="none" fill-rule="evenodd"/>
+</svg>
