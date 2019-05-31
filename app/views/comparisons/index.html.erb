@@ -2,43 +2,54 @@
 <<<<<<< HEAD
 =======
 
-<%= form_tag medication_comparisons_path(@medication), method: :get do %>
-  <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-  <%= submit_tag "submit" %>
-<% end %>
+<div class="container">
+  <div class="mf-medium-card">
+    <%= cl_image_tag (@medication.photo) %>
+    <div class=medium-card-description>
+    <p>name: <%= @medication.english_name %></p>
+    <p>category: <%= @medication.local_category %></p>
+      <% @medication.ingredients.each do |ingredient| %>
+        <p>active ingredient: <%= ingredient.name %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class = "medium-card-country-info">
+  <% if @medications.empty? %>
+    <p style="font-size:16px;">Find medicine equivalent in: </p>
+      <%= form_tag medication_comparisons_path(@medication), method: :get do %>
+        <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection select"}) %>
+        <%= submit_tag "submit", class: "mf-button" %>
+      <% end %>
+  <% else %>
+      <div id="medication2">
+      <p style="font-size:16px;">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
+            <% @medications.each do |medication| %>
+        <div>
+            <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+              <%= cl_image_tag(medication.photo, width: 250)%>
+              <p>name: <%= medication.english_name %></p>
+              <% end %>
+              <% medication.ingredients.each do |ingredient| %>
+                <p>active ingredient: <%= ingredient.name %></p>
+              <% end %>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
 
 
 >>>>>>> 8ea3c626906618f2ac65559a840d3fc8c2d2fbb9
 
-<div class="mf-medium-card">
-  <%= cl_image_tag (@medication.photo) %><br>
-  <br>
-  <p>name: <%= @medication.english_name %></p>
-  <p>category: <%= @medication.local_category %></p>
-    <% @medication.ingredients.each do |ingredient| %>
-      <p>active ingredient: <%= ingredient.name %></p>
-    <% end %>
-</div>
 
-<br>
 
-<% if @medications.empty? %>
-  <p>Find medicine equivalent in</p>
-    <%= form_tag medication_comparisons_path(@medication), method: :get do %>
-      <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection"}) %>
-      <%= submit_tag "submit" %>
-    <% end %>
-<% else %>
-  <p>Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%></p>
-    <div id="medication2">
-    <% @medications.each do |medication| %>
-    <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
-      <%= cl_image_tag(medication.photo, width: 250)%>
-      <p>name: <%= medication.english_name %></p>
-      <% end %>
-      <% medication.ingredients.each do |ingredient| %>
-        <p>active ingredient: <%= ingredient.name %></p>
-      <% end %>
       <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
