@@ -2,6 +2,7 @@ import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css'
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.js'
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
+
 const initMapbox = () => {
 
   const mapElement = document.getElementById('map');
@@ -10,15 +11,13 @@ const initMapbox = () => {
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     navigator.geolocation.getCurrentPosition((data) => {
-      console.log(data.coords.latitude)
-      console.log(data.coords.longitude)
-      fetch(`/map/nearby_pharmacy?lat=${data.coords.latitude}&lng=${data.coords.longitude}`)
+      fetch(`/map/nearby_pharmacy?lat=${55.7558}&lng=${37.6173}`)
         .then(response => response.json())
         .then((pharmacyData) => {
           console.log(pharmacyData)
            // const pharmacy = [pharmacyData.lng, pharmacyData.lat];
-          const user = { lng: data.coords.longitude, lat:data.coords.latitude };
-
+          const user = { lng:37.6173, lat: 55.7558 };
+          console.log(user)
           console.log(pharmacyData)
 
           const map = new mapboxgl.Map({
