@@ -9,11 +9,11 @@
             <h2><%= medication.english_name %></h2>
           <% end %>
           <% medication.ingredients.each do |ingredient| %>
-            <p>Active ingredient: <%= ingredient.name %></p>
+            <p>active ingredient: <%= ingredient.name %></p>
           <% end %>
 
 
-          <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-body">
@@ -21,12 +21,12 @@
                     <div class="mf-big-card">
                       <%= cl_image_tag(medication.photo, width: 250) %>
                       <div>
-                        <p>Name: <%= medication.local_name %></p>
-                        <p>Category: <%= medication.local_category %></p>
+                        <p>name: <%= medication.local_name %></p>
+                        <p>category: <%= medication.local_category %></p>
                         <% medication.ingredients.each do |ingredient| %>
-                          <p>Active ingredient: <%= ingredient.name %></p>
+                          <p>active ingredient: <%= ingredient.name %></p>
                         <% end %>
-                        <p>Description: <%= medication.local_description %></p>
+                        <p>description: <%= medication.local_description %></p>
 
                         <%= link_to 'Yes, I am searching for an equivalent of this medicine', medication_comparisons_path(medication.id) %>
 
@@ -41,8 +41,10 @@
               </div>
             </div>
           </div>
+          <!-- end of modal -->
         <% end %>
       </div>
+      <!-- end of movies -->
 
   <%= link_to "search page", search_medications_path %>
 
