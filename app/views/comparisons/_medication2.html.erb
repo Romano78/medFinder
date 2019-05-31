@@ -1,10 +1,15 @@
-<%= cl_image_tag (@medication2.photo), width:250 %><br>
-<br>
-<p>name: <%= @medication2.english_name %></p>
-<p>category: <%= @medication2.local_category %></p>
-  <% @medication2.ingredients.each do |ingredient| %>
-    <p>active ingredient: <%= ingredient.name %></p>
-  <% end %>
+
+<p style="font-size:14px;">Equivalent medication in <%= ISO3166::Country[@medication2.country]%></p>
+  <div class="medium-card-country-info">
+    <%= cl_image_tag (@medication2.photo), width:250 %>
+  <div class=medium-card-description>
+    <p>name: <%= @medication2.english_name %></p>
+    <p>category: <%= @medication2.local_category %></p>
+      <% @medication2.ingredients.each do |ingredient| %>
+        <p>active ingredient: <%= ingredient.name %></p>
+  </div>
+      <% end %>
+  </div>
 
 <%= link_to "Search for nearest pharmacy", map_path %>
 
