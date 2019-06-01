@@ -4,7 +4,6 @@
 
   <div class="mf-medium-card">
     <%= cl_image_tag (@medication.photo) %>
-
     <div class=medium-card-description>
       <p>name: <%= @medication.english_name %></p>
       <p>category: <%= @medication.local_category %></p>
@@ -14,21 +13,50 @@
     </div>
   </div>
   <!-- end of mf-medium-card -->
-
-
   <% if @medications.empty? %>
     <p style="font-size:16px;">Find medicine equivalent in: </p>
     <%= form_tag medication_comparisons_path(@medication), method: :get do %>
       <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection select"}) %>
       <%= submit_tag "submit", class: "mf-button" %>
     <% end %>
+    <!-- end of form for country selection -->
   <% else %>
     <div id="medication2">
+      <% @medications.each do |medication| %>
+        <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="profile-banner d-flex align-items-center" id="user-profile">
+                  <div class="mf-big-card">
+                    <%= cl_image_tag(medication.photo, width: 250) %>
+                    <div>
+                      <p>name: <%= medication.english_name %></p>
+                      <p>category: <%= medication.local_category %></p>
+                      <% medication.ingredients.each do |ingredient| %>
+                      <p>active ingredient: <%= ingredient.name %></p>
+                      <% end %>
+                      <p>description: <%= medication.local_description %></p>
+
+                      <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication), remote: true %>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <!-- end of modal - to be loaded in a loop before starting the carousel loop, once the carousel starts, it triggers the modal. this way we avoid blank pages in carousel -->
       <p style="font-size:14px;text-align:center">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%>
       </p>
-<!--       <div class="cards-carousel"> -->
+      <div class="cards-carousel">
 
       <% @medications.each do |medication| %>
+
         <div class="medium-card-country-info">
           <%= cl_image_tag(medication.photo, width: 250)%>
           <div class='medium-card-description'>
@@ -43,54 +71,22 @@
           <!-- end of medium-card-description -->
         </div>
         <!-- end of medium-card-country-info -->
-
-
-        <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <div class="profile-banner d-flex align-items-center" id="user-profile">
-                    <div class="mf-big-card">
-                      <%= cl_image_tag(medication.photo, width: 250) %>
-                      <div>
-                        <p>name: <%= medication.english_name %></p>
-                        <p>category: <%= medication.local_category %></p>
-                        <% medication.ingredients.each do |ingredient| %>
-                        <p>active ingredient: <%= ingredient.name %></p>
-                        <% end %>
-                        <p>description: <%= medication.local_description %></p>
-
-                        <%= link_to 'Yes, this is an equivalent of my medicine', medication_comparison_path(medication), remote: true %>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
       <% end %>
-
-
-
-
-<!--     </div> -->
-    <!-- end of carousel -->
+    </div>
+    <!-- end of carousel, the toggle:modal triggers the modal loop at line 24 -->
   </div>
     <!-- end of #medication2 -->
-
-
 <% end %>
 <!-- end of if/else loop -->
 </div>
 <!-- end of container -->
 
 
+
+
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
-<%#= javascript_pack_tag 'card_carousel' %>
-<%#= stylesheet_pack_tag 'slick-carousel/slick' %>
+<%= javascript_pack_tag 'card_carousel' %>
+<%= stylesheet_pack_tag 'card_carousel' %>
 
 
