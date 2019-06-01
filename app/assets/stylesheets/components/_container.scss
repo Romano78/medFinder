@@ -1,11 +1,18 @@
 .fullheight {
-  height: calc(100vh - 86px);
+  min-height: calc(100vh - 86px);
 
   &.with-progressbar {
-    height: calc(100vh - 102px);
+    min-height: calc(100vh - 134px);
   }
 
+}
 
+.espacement-div{
+margin-bottom:80px;
+}
+
+.w-100.text-center {
+margin-top: 30px;
 }
 
 
