@@ -1,8 +1,8 @@
 
 select,
-#search_query {
+#search-query {
   display:block;
-  width:90%;
+  width:100%;
   margin:auto;
   height: 40px;
   background-color: $lightest-gray;
@@ -24,4 +24,20 @@ form {
 
 form > span {
   width:100%!important;
+}
+
+
+.select2-search__field {
+   &:focus {
+    outline: -webkit-focus-ring-color auto 3px;
+    outline-color: #343a40;
+  }
+}
+
+
+.select2-selection.select2-selection--single {
+   &:focus {
+    outline: -webkit-focus-ring-color auto 3px;
+    outline-color: #343a40;
+  }
 }
