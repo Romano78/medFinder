@@ -211,5 +211,13 @@ puts "creating medications..."
 
   Medication.reindex!
 
+
   puts "finished"
+
+  User.destroy_all
+
+  User.create!(
+    email:"user@gmail.com",
+    password:"lewagon",
+    )
 

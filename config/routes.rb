@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     get :nearby_pharmacy
   end
  end
-  
+
   get "/mf_styles", to:"pages#mf_styles"
+
+  get "/dashboard", to:"pages#dashboard"
 
 end
