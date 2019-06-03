@@ -36,14 +36,13 @@
           <div class="circle-fill  <%= @query ? "progress-active" : "" %>">
           </div>
         <% end %>
-        <% if @query %>
+          <% if @query %>
           <p><%= @query.capitalize %></p>
         <% else %>
           <p>Search medication</p>
         <% end %>
       </div>
     </div>
-
     <div class="col prog-column">
       <div class="row progress-step">
         <% if @home_med %>
