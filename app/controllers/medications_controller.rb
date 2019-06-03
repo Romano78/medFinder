@@ -16,7 +16,8 @@ class MedicationsController < ApplicationController
     session[:destination] = nil
     session[:destination_med] = nil
     if params[:user]
-      session[:home_country] = params[:user][:country]
+      session[:home_country] = params[:user][:home_country]
+      session[:destination] = params[:user][:visiting_country]
     end
   end
 end

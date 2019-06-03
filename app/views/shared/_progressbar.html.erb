@@ -1,11 +1,11 @@
     <%  @home_country = session[:home_country]
+        @destination = session[:destination]
         @query = session[:query]
         if session[:home_med]
           @home_med = Medication.find(session[:home_med])
         else
           @home_med = nil
         end
-        @destination = session[:destination]
         if session[:destination_med]
           @destination_med = Medication.find(session[:destination_med])
         else

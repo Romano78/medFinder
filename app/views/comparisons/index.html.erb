@@ -13,14 +13,7 @@
     </div>
   </div>
   <!-- end of mf-medium-card -->
-  <% if @medications.empty? %>
-    <p style="font-size:16px;">Find medicine equivalent in: </p>
-    <%= form_tag medication_comparisons_path(@medication), method: :get do %>
-      <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection select"}) %>
-      <%= submit_tag "submit", class: "mf-button" %>
-    <% end %>
-    <!-- end of form for country selection -->
-  <% else %>
+
     <div id="medication2">
       <% @medications.each do |medication| %>
         <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,13 +60,13 @@
       <!-- end of modal - to be loaded in a loop before starting the carousel loop, once the carousel starts, it triggers the modal. this way we avoid blank pages in carousel -->
       <p style="font-size:14px;text-align:center">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%>
       </p>
-      <div class="cards-carousel">
+      <div class="cards-carousel" id="carousel">
 
       <% @medications.each do |medication| %>
 
-        <div class="medium-card-country-info">
-          <%= cl_image_tag(medication.photo, width: 250)%>
-          <div class='medium-card-description'>
+        <div class="carousel-medium-card">
+          <%= cl_image_tag(medication.photo, class: "carousel-img")%>
+          <div class='carousel-medium-card-description'>
             <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
               <p>name: <%= medication.english_name %></p>
             <% end %>
@@ -90,11 +83,16 @@
     <!-- end of carousel, the toggle:modal triggers the modal loop at line 24 -->
   </div>
     <!-- end of #medication2 -->
-<% end %>
-<!-- end of if/else loop -->
 </div>
 <!-- end of container -->
 
+
+<div class="fullheight"
+  id="map"
+  style="width: 100%;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 
 
 

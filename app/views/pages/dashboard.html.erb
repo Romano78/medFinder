@@ -1,1 +1,26 @@
-<h1>Hello</h1>
+<h1>Favorites medications</h1>
+
+<div>
+<%  current_user.favorites.each do |favorite| %>
+<%= favorite.medication.local_name %>
+  <div class="mf-regular-card">
+   <%= cl_image_tag(favorite.medication.photo) %>
+    <div class="regular-card-footer">
+      <h6><%= favorite.medication.local_name %></h6>
+      <p><%= favorite.medication.local_description %></p>
+        <div id="btn-styles">
+          <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete, class: "mf-button-delete" do %>
+        <i class="fas fa-trash-alt"></i>
+       <% end %>
+        </div>
+    </div>
+  </div>
+
+<% end %>
+</div>
+
+
+<div id="btn-styles">
+  <a href="<%= root_path %>" class="mf-button">add a new favorite</a>
+</div>
+

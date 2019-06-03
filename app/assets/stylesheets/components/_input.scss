@@ -3,7 +3,7 @@ select,
 #search-query {
   display:block;
   width:100%;
-  margin:auto;
+  margin-bottom: 20px !important;
   height: 40px;
   background-color: $lightest-gray;
   color:$light-gray;
@@ -40,4 +40,15 @@ form > span {
     outline: -webkit-focus-ring-color auto 3px;
     outline-color: #343a40;
   }
+}
+
+
+.select2-container .select2-selection--single{
+
+  margin-bottom: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+  color: $light-gray;
+
 }

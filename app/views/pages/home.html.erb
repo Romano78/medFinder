@@ -1,19 +1,18 @@
-<div class="container d-flex flex-column justify-content-center align-items-center fullheight">
+<div class="container d-flex flex-column justify-content-center align-items-center fullheight home">
   <div class="text-center espacement-div">
     <h1 class="mf-title1">Travel med</h1>
-    <p class="tagline">find the equivalent of your  local medicine</p>
+    <p class="tagline">find the equivalent <br> of your  local medicine</p>
   </div>
 
 
-
-
-
-
-
+<div class="form-tag">
   <%= form_tag(search_medications_path, class:"w-100 text-center") do %>
-    <%= country_select("user", "country", { include_blank: 'What is your home country?' }, {class: "country-selection select"}) %>
+    <%= country_select("user", "home_country", { include_blank: 'Home country' }, {class: "country-selection select"}) %>
+    <%= country_select('user', "visiting_country", { include_blank: 'Visiting country' }, {class: "country-selection select"}) %>
     <%= submit_tag "search" ,class:"mf-button"%>
   <% end %>
+
+</div>
 
 </div>
 

@@ -8,6 +8,29 @@
 .mf-button {
   width: 100%;
   display: block;
+  background: #DDEACE;
+  color: #2B6D14;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  opacity: 0.6;
+}
+
+.mf-button:hover {
+  background: #2B6D14;
+  color: #DDEACE;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.mf-button-delete {
+width: 10%;
+  display: block;
 // height: 40px;
 background: $green-principal;
 color:white;
