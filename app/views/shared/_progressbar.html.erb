@@ -35,22 +35,25 @@
         <%= link_to search_medications_path, method: :post do %>
           <div class="circle-fill  <%= @query ? "progress-active" : "" %>">
           </div>
-        <% end  %>
-        <% if @query %>
+        <% end %>
+          <% if @query %>
           <p><%= @query.capitalize %></p>
         <% else %>
           <p>Search medication</p>
         <% end %>
       </div>
     </div>
-
     <div class="col prog-column">
       <div class="row progress-step">
-        <div class="circle-fill <%= @home_med ? "progress-active" : "" %>">
-        </div>
         <% if @home_med %>
+          <%= link_to medication_comparisons_path(@home_med) do %>
+            <div class="circle-fill progress-active" >
+            </div>
+          <% end %>
           <p><%= @home_med.local_name.capitalize %></p>
         <% else %>
+          <div class="circle-fill">
+          </div>
           <p>Selected medication</p>
         <% end %>
       </div>
