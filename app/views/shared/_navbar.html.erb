@@ -1,22 +1,25 @@
 
-<div class=mf-navbar>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div>
   <%= image_tag "capsule-verte-et-blanche.jpg",class:"logo-large" %>
   <p class="title-navbar">Travel med</p>
+  </div>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <%= link_to "Dashboard", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Logout", "#", class: "nav-link" %>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
-          <%= image_tag "https://app/assets/images/avatar-picture.JPG", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "avatar-picture.JPG", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -29,7 +32,7 @@
   </div>
 </div>
 
-</div>
+
 
 
 
