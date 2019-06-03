@@ -18,7 +18,7 @@
 
     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill <%= @home_country ? "active" : "" %>">
+          <div class="circle-fill <%= @home_country ? "progress-active" : "" %>">
           </div>
         <% if @home_country %>
          <p><%= ISO3166::Country[@home_country.capitalize] %></p>
@@ -30,7 +30,7 @@
 
     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill  <%= @query ? "active" : "" %>">
+          <div class="circle-fill  <%= @query ? "progress-active" : "" %>">
           </div>
         <% if @query %>
           <p><%= @query.capitalize %></p>
@@ -42,7 +42,7 @@
 
     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill <%= @home_med ? "active" : "" %>">
+          <div class="circle-fill <%= @home_med ? "progress-active" : "" %>">
           </div>
         <% if @home_med %>
           <p><%= @home_med.local_name.capitalize %></p>
@@ -54,7 +54,7 @@
 
     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill <%= @destination ? "active" : "" %>">
+          <div class="circle-fill <%= @destination ? "progress-active" : "" %>">
           </div>
         <% if @destination %>
           <p><%= ISO3166::Country[@destination] %></p>
@@ -66,7 +66,7 @@
 
     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill <%= @destination_med ? "active" : "" %>" id="last-circle">
+          <div class="circle-fill <%= @destination_med ? "progress-active" : "" %>" id="last-circle">
           </div>
         <div id="destination-med">
           <p>Destination medication</p>
