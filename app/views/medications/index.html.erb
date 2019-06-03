@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 offset-sm-2 mt-5">
-      <div id="medication-card">
         <% @medications.each do |medication| %>
+        <div class="mf-regular-card" id="medical-card">
             <%= cl_image_tag(medication.photo, width:300) %>
             <h2><%= medication.english_name %></h2>
           <% medication.ingredients.each do |ingredient| %>
@@ -41,12 +41,10 @@
             </div>
           </div>
           <!-- end of modal -->
+        </div>
         <% end %>
-      </div>
       <!-- end of medication-card -->
-
-  <%= link_to "Back", search_medications_path, method: "post", class:"mf-button-secondary"%>
-
+      <%= link_to "Back", search_medications_path, method: "post", class:"mf-button-secondary"%>
     </div>
   </div>
 </div>
