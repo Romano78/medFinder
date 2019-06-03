@@ -2,7 +2,8 @@ class ComparisonsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     session[:home_med] = params[:medication_id]
-    session[:destination] = params[:country]
+    session[:destination] = params[:country] if params[:country].present?
+    session[:destination_med] = nil
     @medication = Medication.find(params[:medication_id])
     @medications = Medication.where(country: params[:country])
     @medications = @medications.select do |medication|
