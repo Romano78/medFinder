@@ -6,7 +6,8 @@
 
 
   <%= form_tag(search_medications_path, class:"w-100 text-center") do %>
-    <%= country_select("user", "country", { include_blank: 'What is your home country?' }, {class: "country-selection select"}) %>
+    <%= country_select("user", "home_country", { include_blank: 'What is your home country?' }, {class: "country-selection select"}) %>
+    <%= country_select('user', "visiting_country", { include_blank: 'Select your visiting country' }, {class: "country-selection select"}) %>
     <%= submit_tag "search" ,class:"mf-button"%>
   <% end %>
 

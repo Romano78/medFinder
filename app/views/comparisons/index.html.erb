@@ -13,14 +13,7 @@
     </div>
   </div>
   <!-- end of mf-medium-card -->
-  <% if @medications.empty? %>
-    <p style="font-size:16px;">Find medicine equivalent in: </p>
-    <%= form_tag medication_comparisons_path(@medication), method: :get do %>
-      <%= country_select(nil, "country", { include_blank: 'Select a country' }, {class: "country-selection select"}) %>
-      <%= submit_tag "submit", class: "mf-button" %>
-    <% end %>
-    <!-- end of form for country selection -->
-  <% else %>
+
     <div id="medication2">
       <% @medications.each do |medication| %>
         <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,8 +69,6 @@
     <!-- end of carousel, the toggle:modal triggers the modal loop at line 24 -->
   </div>
     <!-- end of #medication2 -->
-<% end %>
-<!-- end of if/else loop -->
 </div>
 <!-- end of container -->
 

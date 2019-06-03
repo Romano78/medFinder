@@ -4,14 +4,15 @@
     <div class="col-sm-8 offset-sm-2 mt-5">
       <div id="medication-card">
         <% @medications.each do |medication| %>
-          <%= link_to medication_comparison_path(medication.id), class: "mf-regular-card", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
             <%= cl_image_tag(medication.photo, width:300) %>
             <h2><%= medication.english_name %></h2>
           <% medication.ingredients.each do |ingredient| %>
             <p>active ingredient: <%= ingredient.name %></p>
           <% end %>
+          <%= link_to 'Yes, I am searching for an equivalent of this medicine', medication_comparisons_path(medication) %>
+          <%= link_to "Modal", medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } %>
 
-          <% end %>
+
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -27,7 +28,6 @@
                         <% end %>
                         <p>description: <%= medication.local_description %></p>
 
-                        <%= link_to 'Yes, I am searching for an equivalent of this medicine', medication_comparisons_path(medication.id) %>
 
                         <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -43,7 +43,7 @@
           <!-- end of modal -->
         <% end %>
       </div>
-      <!-- end of movies -->
+      <!-- end of medication-card -->
 
   <%= link_to "Back", search_medications_path, method: "post", class:"mf-button-secondary"%>
 
