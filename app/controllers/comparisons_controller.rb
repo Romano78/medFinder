@@ -1,4 +1,5 @@
 class ComparisonsController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     session[:home_med] = params[:medication_id]
     @medication = Medication.find(params[:medication_id])
