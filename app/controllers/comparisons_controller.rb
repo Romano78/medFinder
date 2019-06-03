@@ -1,4 +1,5 @@
 class ComparisonsController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     session[:home_med] = params[:medication_id]
     session[:destination] = params[:country]
