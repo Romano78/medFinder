@@ -1,0 +1,53 @@
+
+#carousel{
+  padding: 0 20px ;
+  border: 1px solid #deeecb;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 9px rgba(0,0,0,.08);
+}
+
+.carousel-medium-card {
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.carousel-medium-card-description{
+  font-family: "body-font";
+  font-size: 12px;
+  text-align:center;
+  padding-top: 20px;
+}
+
+.carousel-img{
+      max-height: 160px;
+    max-width: 280px;
+}
+
+#carousel > div {
+  height:250px;
+}
+
+.slick-prev-fa {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 15px);
+  left: -1px;
+  font-size: 30px;
+  color:#ddeace;
+}
+
+
+.slick-next-fa {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 15px);
+  right: -1px;
+  font-size: 30px;
+  color:#ddeace;
+}
+
+
