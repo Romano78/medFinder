@@ -2,13 +2,14 @@
 <p style="font-size:14px;">Equivalent medication in <%= ISO3166::Country[@medication2.country]%></p>
   <div class="medium-card-country-info">
     <%= cl_image_tag (@medication2.photo), width:250 %>
-  <div class=medium-card-description>
-    <p>name: <%= @medication2.english_name %></p>
-    <p>category: <%= @medication2.local_category %></p>
-      <% @medication2.ingredients.each do |ingredient| %>
-        <p>active ingredient: <%= ingredient.name %></p>
-  </div>
-      <% end %>
+    <div class=medium-card-description>
+      <p>name: <%= @medication2.english_name %></p>
+      <p>category: <%= @medication2.local_category %></p>
+        <% @medication2.ingredients.each do |ingredient| %>
+          <p>active ingredient: <%= ingredient.name %></p>
+        <% end %>
+     <%= link_to "Add a favorite", medication_favorites_path(@medication2), method: "post" %>
+    </div>
   </div>
 
 <%= link_to "Search for nearest pharmacy", map_path %>

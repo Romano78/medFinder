@@ -203,7 +203,6 @@ puts "creating Russian medications..."
    local_description: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
    foreign_description: "Облегчение симптомов простуды, гриппа, ОРВИ, сопровождающихся кашлем"
 
-
    )
 
   imodiumCanada = Medication.create!(

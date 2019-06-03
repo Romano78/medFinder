@@ -16,6 +16,17 @@ margin:16px auto;
 text-align:center;
 }
 
+.mf-button-delete {
+width: 10%;
+  display: block;
+// height: 40px;
+background: $green-principal;
+color:white;
+padding:10px;
+margin:16px auto;
+text-align:center;
+}
+
 .hidden {
   display:none;
 }
