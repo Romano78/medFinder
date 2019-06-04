@@ -7,3 +7,17 @@
   border: solid 1px rgba(118, 118, 118, 0.2);
   border-radius: 1px;
 }
+
+.map-marker h2 {
+  text-align: center;
+  font-size: 16px;
+  font-family: $headers-font;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.map-marker p {
+  font-size: 12px;
+  font-family: $body-font;
+  margin-bottom: 0.5em;
+}

@@ -16,7 +16,7 @@ class MapsController < ApplicationController
 
     first_five = results["results"][0..4].map do |pharmacy|
       pharmacy_hash = pharmacy["geometry"]["location"]
-      pharmacy_hash[:info_window] = render_to_string(partial: "info_window", locals: { name: pharmacy["name"] })
+      pharmacy_hash[:info_window] = render_to_string(partial: "info_window", locals: { name: pharmacy["name"], opening_hour: pharmacy["opening_hour"], user_rating: pharmacy["user_ratings_total"], rating: pharmacy["rating"], address: pharmacy["vicinity"] })
       pharmacy_hash
     end
     render json: first_five
