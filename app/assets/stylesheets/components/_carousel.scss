@@ -16,15 +16,14 @@
 
 
 .carousel-medium-card-description{
-  font-family: "body-font";
   font-size: 12px;
   text-align:center;
   padding-top: 20px;
 }
 
 .carousel-img{
-      max-height: 160px;
-    max-width: 280px;
+  max-height: 160px;
+  max-width: 280px;
 }
 
 #carousel > div {
@@ -37,7 +36,7 @@
   top: calc(50% - 15px);
   left: -1px;
   font-size: 30px;
-  color:#ddeace;
+  color:$green-secondary;
 }
 
 
@@ -47,7 +46,7 @@
   top: calc(50% - 15px);
   right: -1px;
   font-size: 30px;
-  color:#ddeace;
+  color:$green-secondary;
 }
 
 

@@ -1,4 +1,22 @@
-.fullheight {
-  min-height: calc(100vh - 86px);
+.container-dashboard {
+  .mf-medium-card {
+    height: auto;
+    margin-bottom: 10px;
+  }
 
+ .title-dashboard {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
  }
+
+ .mf-button {
+  display: inline-block;;
+ }
+
+}
+
+
+
+

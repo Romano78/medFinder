@@ -2,7 +2,7 @@ class MedicationsController < ApplicationController
     skip_before_action :authenticate_user!
   def index
     session[:query] = params[:query]
-    raise
+    # raise
     if params[:query].present?
       @medications = Medication.search(params[:query])
       @medications = @medications.select { |medication| medication.country == session[:home_country] }
