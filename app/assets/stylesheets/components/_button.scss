@@ -8,8 +8,8 @@
 .mf-button {
   width: 100%;
   display: block;
-  background: #DDEACE;
-  color: #2B6D14;
+  background: $green-secondary;
+  color: $green-principal;
   padding: 10px;
   margin: 16px auto;
   text-align: center;
@@ -22,8 +22,8 @@
 }
 
 .mf-button:hover {
-  background: #2B6D14;
-  color: #DDEACE;
+  background: $green-principal;
+  color: $green-secondary;
   opacity: 0.6;
   transition: 0.3s;
 }
@@ -32,7 +32,7 @@
 width: 10%;
   display: block;
 // height: 40px;
-background: $green-principal;
+background: $light-gray;
 color:white;
 padding:10px;
 margin:16px auto;

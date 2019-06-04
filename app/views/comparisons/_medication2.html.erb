@@ -8,7 +8,7 @@
         <% @medication2.ingredients.each do |ingredient| %>
           <p>active ingredient: <%= ingredient.name %></p>
         <% end %>
-     <%= link_to "Add a favorite", medication_favorites_path(@medication2), method: "post" %>
+     <%= link_to "Add a favorite", medication_favorites_path(@medication2), method: "post", class: "mf-button"  %>
     </div>
   </div>
 
