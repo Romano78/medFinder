@@ -2,7 +2,40 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 offset-sm-2 mt-5">
-        <% @medications.each do |medication| %>
+
+      <% @medications.each do |medication| %>
+        <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="profile-banner d-flex align-items-center" id="user-profile">
+                  <div class="mf-big-card">
+                    <%= cl_image_tag(medication.photo, width: 250) %>
+                    <div>
+                      <p>name: <%= medication.local_name %></p>
+                      <p>category: <%= medication.local_category %></p>
+                      <% medication.ingredients.each do |ingredient| %>
+                        <p>active ingredient: <%= ingredient.name %></p>
+                      <% end %>
+                      <p>description: <%= medication.local_description %></p>
+
+
+                      <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of modal -->
+      <% end %>
+      <!-- end of loop for modals -->
+
+      <% @medications.each do |medication| %>
         <div class="mf-regular-card" id="medical-card">
           <p class="medication-category"><%= medication.local_category %></p>
             <%= cl_image_tag(medication.photo, width:300) %>
@@ -12,6 +45,7 @@
                 <p class="ingredient-name"><%= ingredient.name %></p>
               <% end %>
             </div>
+            <!-- end of regular card footer -->
             <div class="card-icons">
               <%= link_to medication_comparisons_path(medication) do %>
                <i class="far fa-check-circle"></i>
@@ -20,39 +54,10 @@
                 <i class="far fa-question-circle"></i>
               <% end %>
             </div>
-
-
-          <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <div class="profile-banner d-flex align-items-center" id="user-profile">
-                    <div class="mf-big-card">
-                      <%= cl_image_tag(medication.photo, width: 250) %>
-                      <div>
-                        <p>name: <%= medication.local_name %></p>
-                        <p>category: <%= medication.local_category %></p>
-                        <% medication.ingredients.each do |ingredient| %>
-                          <p>active ingredient: <%= ingredient.name %></p>
-                        <% end %>
-                        <p>description: <%= medication.local_description %></p>
-
-
-                        <div class="modal-footer">
-                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end of modal -->
+            <!-- end of card-icons -->
         </div>
-        <% end %>
-      <!-- end of medication-card -->
+      <% end %>
+    <!-- end of medication-card -->
       <%= link_to "Back", search_medications_path, method: "post", class:"mf-button"%>
     </div>
   </div>
