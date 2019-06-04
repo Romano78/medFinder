@@ -9,8 +9,12 @@
           <% medication.ingredients.each do |ingredient| %>
             <p>active ingredient: <%= ingredient.name %></p>
           <% end %>
-          <%= link_to 'Yes, I am searching for an equivalent of this medicine', medication_comparisons_path(medication) %>
-          <%= link_to "Modal", medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } %>
+          <%= link_to medication_comparisons_path(medication) do %>
+           <i class="far fa-check-circle">Yes</i>
+          <% end %>
+          <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+            <i class="far fa-question-circle">Modal</i>
+          <% end %>
 
 
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
