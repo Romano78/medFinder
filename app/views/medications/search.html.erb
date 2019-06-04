@@ -8,8 +8,22 @@
   <%= form_tag medications_path, method: :get, class:"w-100 text-center" do |f| %>
       <input placeholder="name or active ingredient" class="string required" type="text" name="query" id="search-query"/>
 
-      <%= submit_tag "search" ,class:"mf-button"%>
+      <%= submit_tag "search" , class:"mf-button", disabled: true, id: "search-country-btn" %>
   <% end %>
 
 </div>
 <!-- medication_comparisons_path(medication_id -->
+
+
+<script>
+  const btn = document.getElementById("search-country-btn");
+  const searchInput = document.getElementById("search-query");
+  searchInput.addEventListener("input", (event) => {
+      if (event.target.value.length >= 2) {
+        btn.disabled = false;
+      } else {
+        btn.disabled = true;
+      }
+  })
+
+</script>
