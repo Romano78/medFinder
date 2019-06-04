@@ -61,3 +61,17 @@ form > span {
   color: $light-gray;
 
 }
+
+
+.login_input {
+
+&:focus {
+    outline-color: $light-gray !important;
+    outline: -webkit-focus-ring-color auto 3px;
+    background: $light-gray !important;
+  }
+}
+
+.simple_form.new_user {
+padding: 20px;
+}
