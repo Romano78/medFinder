@@ -23,7 +23,7 @@
           </div>
         <% end %>
         <% if @home_country %>
-         <p><%= ISO3166::Country[@home_country.capitalize] %></p>
+          <p><%= ISO3166::Country[@home_country.capitalize] %></p>
         <% else %>
           <p>Home country</p>
         <% end %>
