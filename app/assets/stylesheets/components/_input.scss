@@ -66,9 +66,9 @@ form > span {
 .login_input {
 
 &:focus {
-    outline-color: $light-gray !important;
+    outline-color: $lightest-gray !important;
     outline: -webkit-focus-ring-color auto 2px;
-    background: $light-gray !important;
+    background: $lightest-gray !important;
     box-shadow: none;
     border-color: none;
   }
