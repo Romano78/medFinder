@@ -1,12 +1,15 @@
 .mf-medium-card {
   align-items:center;
-display:flex;
-height:140px;
-box-shadow: 0px 3px 7px rgba(118,118,118,0.3);
+  display:flex;
+  height:140px;
+  box-shadow: 0 5px 9px rgba(0,0,0,.08);
+  border: 1px solid #deeecb;
+  background: #fff;
+  border-radius: 3px;
 img {
-width: 40%;
-height:100%;
-flex-grow:0;
+  width: 40%;
+  height:100%;
+  flex-grow:0;
 object-fit:cover;
 }
 }
@@ -15,24 +18,44 @@ object-fit:cover;
 {
 padding:30px;
 p{
-  margin-bottom: 0px;
-  font-size: 12px;
+  margin-bottom: .7rem;
+  font-weight:300;
+  font-size: .7rem;
+}
+h5{
+margin-top:15px;
+font-weight:600;
+font-size: 1rem;
+}
+h6{
+  font-weight:400;
+  font-size: .7rem;
 }
 }
 
 .medium-card-country-info {
-  // font-family: "body-font";
-  // font-size: 12px;
-    align-items:center;
+  align-items:center;
   display:flex;
-  // height:140px;
-  box-shadow: 0px 3px 7px rgba(118,118,118,0.3);
+  box-shadow: 0 5px 9px rgba(0,0,0,.08);
+  padding: 0 20px ;
+  border: 1px solid #deeecb;
+  background: #fff;
+  border-radius: 3px;
   img {
   width: 40%;
   max-height: 100%;
   flex-grow:0;
   object-fit:cover;
   }
-
-
 }
+
+
+.carousel-medium-card {
+  .card-icons {
+    position: initial;
+    bottom: initial;
+    right: initial;
+  }
+}
+
+
