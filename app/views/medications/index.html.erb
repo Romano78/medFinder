@@ -12,7 +12,7 @@
                   <div class="mf-big-card">
                     <%= cl_image_tag(medication.photo, width: 250) %>
                     <div>
-                      <p>name: <%= medication.local_name %></p>
+                      <h6><%= medication.local_name %></h6>
                       <p>category: <%= medication.local_category %></p>
                       <% medication.ingredients.each do |ingredient| %>
                         <p>active ingredient: <%= ingredient.name %></p>

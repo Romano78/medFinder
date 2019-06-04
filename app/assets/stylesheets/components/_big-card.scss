@@ -2,17 +2,30 @@ img {
   max-width: 100%;
 }
 .mf-big-card {
-font-family: "body-font";
+font-family: $body-font;
+font-weight: 300;
+font-size: .8rem;
 width: 80vw;
 margin:auto;
-background: white;
-box-shadow: 0px 3px 7px rgba(118,118,118,0.3);
+background: #fff;
+box-shadow: 0 5px 9px rgba(0,0,0,.08);
 padding:24px;
+border: 1px solid #deeecb;
+border-radius: 3px;
+padding: 0 20px ;
 .mf-button{
   width:100%;
   display:block;
 }
 h6{
 margin-top:15px;
+font-weight:600;
+}
+h5{
+  font-weight:400;
+}
+p{
+  font-weight:300;
 }
 }
+
