@@ -16,13 +16,23 @@
 
 
 .carousel-medium-card-description{
-  font-size: 12px;
   text-align:center;
   padding-top: 20px;
+p {
+  color: $medium-gray;
+  font-size: 13px;
+  letter-spacing: 1px;
+  }
+h2 {
+  color: $dark-gray;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 22px;
+  }
 }
 
 .carousel-img{
-  max-height: 160px;
+  max-height: 120px;
   max-width: 280px;
 }
 

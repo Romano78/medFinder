@@ -12,16 +12,16 @@
                   <div class="mf-big-card">
                     <%= cl_image_tag(medication.photo, width: 250) %>
                     <div>
-                      <p>name: <%= medication.local_name %></p>
-                      <p>category: <%= medication.local_category %></p>
+                      <h5><%= medication.local_name %></h5>
+                      <h6>category:</h6> <p><%= medication.local_category %></p>
                       <% medication.ingredients.each do |ingredient| %>
-                        <p>active ingredient: <%= ingredient.name %></p>
+                        <h6>active ingredient:</h6> <p><%= ingredient.name %></p>
                       <% end %>
-                      <p>description: <%= medication.local_description %></p>
+                      <h6>description:</h6> <p><%= medication.local_description %></p>
 
 
                       <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <i class="far fa-times-circle" data-dismiss="modal"></i>
                       </div>
 
                     </div>
