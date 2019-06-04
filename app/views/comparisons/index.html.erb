@@ -58,7 +58,7 @@
         </div>
       <% end %>
       <!-- end of modal - to be loaded in a loop before starting the carousel loop, once the carousel starts, it triggers the modal. this way we avoid blank pages in carousel -->
-      <p style="font-size:14px;text-align:center">Find medicine equivalent in <%= ISO3166::Country[@medications.first.country]%>
+      <p class="header-comparison"> Equivalent in <%= ISO3166::Country[@medications.first.country]%>
       </p>
       <div class="cards-carousel" id="carousel">
 

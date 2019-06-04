@@ -14,12 +14,12 @@ $('.cards-carousel').slick({
 
 
 
-// $('.slick-prev').slick({
-//   prevArrow:'<button type="button" class="slick-prev slick-prev-fa">Previous</button>'
+// $('.cards-carousel').slick({
+//   prevArrow:"<button type='button' class='slick-prev slick-prev-fa'><i class='fas fa-angle-left'></i></button>"
 // });
 
 
-// $('.slick-next').slick({
-//   nextArrow:'<button type="button" class="slick-next slick-next-fa">Next</button>'
+// $('.cards-carousel').slick({
+//   nextArrow:"<button type='button' class='slick-next slick-next-fa'><i class='fas fa-angle-right'></i></button>"
 // });
 
