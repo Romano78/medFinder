@@ -10,10 +10,10 @@
             <p>active ingredient: <%= ingredient.name %></p>
           <% end %>
           <%= link_to medication_comparisons_path(medication) do %>
-           <i class="far fa-check-circle">Yes</i>
+           <i class="far fa-check-circle"></i>
           <% end %>
           <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
-            <i class="far fa-question-circle">Modal</i>
+            <i class="far fa-question-circle"></i>
           <% end %>
 
 
