@@ -4,14 +4,21 @@ select,
   display:block;
   width:100%;
   margin-bottom: 20px !important;
-  height: 40px;
-  background-color: $lightest-gray;
-  color:$light-gray;
+  height: 60px;
+  background: $lightest-gray !important;
+  border: none !important;
+   color: $light-gray !important;
   text-align-last:center;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  border-radius:3px;
 
   &:focus {
-    outline: -webkit-focus-ring-color auto 3px;
-    outline-color: #343a40;
+    outline-color: white !important;
+    outline-offset: 0px !important;
+    outline: none !important;
+    background: $green-secondary !important;
+    color: $green-principal !important;
   }
 }
 
@@ -39,6 +46,7 @@ form > span {
    &:focus {
     outline: -webkit-focus-ring-color auto 3px;
     outline-color: #343a40;
+    background: $green-secondary !important;
   }
 }
 
