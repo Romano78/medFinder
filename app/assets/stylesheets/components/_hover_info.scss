@@ -1,0 +1,26 @@
+.tooltipster {
+  position: relative;
+  display: inline-block;
+}
+
+
+.tooltipster .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ // position
+  top: -5px;
+  left: 105%;
+ /* Use half of the width (120/2 = 60), to center the tooltip */
+
+}
+
+.tooltipster:hover .tooltiptext {
+  visibility: visible;
+}
+
+
