@@ -66,12 +66,26 @@ form > span {
 .login_input {
 
 &:focus {
-    outline-color: $light-gray !important;
-    outline: -webkit-focus-ring-color auto 3px;
-    background: $light-gray !important;
+    outline-color: $lightest-gray !important;
+    outline: -webkit-focus-ring-color auto 2px;
+    background: $lightest-gray !important;
+    box-shadow: none;
+    border-color: none;
   }
+}
+.form-control {
+
+&:focus {
+  border-color: none;
+  border:none;
+}
+
 }
 
 .simple_form.new_user {
-padding: 20px;
+  // padding: 20px;
 }
+
+
+
+
