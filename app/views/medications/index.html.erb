@@ -4,17 +4,22 @@
     <div class="col-sm-8 offset-sm-2 mt-5">
         <% @medications.each do |medication| %>
         <div class="mf-regular-card" id="medical-card">
+          <p class="medication-category"><%= medication.local_category %></p>
             <%= cl_image_tag(medication.photo, width:300) %>
-            <h2><%= medication.english_name %></h2>
-          <% medication.ingredients.each do |ingredient| %>
-            <p>active ingredient: <%= ingredient.name %></p>
-          <% end %>
-          <%= link_to medication_comparisons_path(medication) do %>
-           <i class="far fa-check-circle"></i>
-          <% end %>
-          <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
-            <i class="far fa-question-circle"></i>
-          <% end %>
+            <div class="regular-card-footer">
+              <h2><%= medication.english_name %></h2>
+              <% medication.ingredients.each do |ingredient| %>
+                <p class="ingredient-name"><%= ingredient.name %></p>
+              <% end %>
+            </div>
+            <div class="card-icons">
+              <%= link_to medication_comparisons_path(medication) do %>
+               <i class="far fa-check-circle"></i>
+              <% end %>
+              <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+                <i class="far fa-question-circle"></i>
+              <% end %>
+            </div>
 
 
           <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

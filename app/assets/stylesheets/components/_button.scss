@@ -28,15 +28,25 @@
   transition: 0.3s;
 }
 
-.mf-button-delete {
-width: 10%;
+
+.mf-button-favorite {
+  width: 28%;
   display: block;
-// height: 40px;
-background: $light-gray;
-color:white;
-padding:10px;
-margin:16px auto;
-text-align:center;
+  background: $light-gray;
+  color:white;
+  padding:10px;
+  margin:16px;
+  text-align:center;
+}
+
+.mf-button-delete {
+  width: 28%;
+  display: block;
+  background: $light-gray;
+  color:white;
+  padding:10px;
+  margin:16px auto;
+  text-align:center;
 }
 
 .hidden {
