@@ -2,7 +2,8 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.create(
       user: current_user,
-      medication_id: params[:medication_id]
+      medication_id: params[:medication_id],
+      home_medication_id: session[:home_med]
       )
 
     redirect_to dashboard_path
