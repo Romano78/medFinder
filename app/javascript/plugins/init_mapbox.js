@@ -25,7 +25,7 @@ const initMapbox = () => {
             style: 'mapbox://styles/mapbox/streets-v10'
           });
 
-          fitMapToMarkers(map, [...pharmacyData, user]);
+
 
           const directions = new MapboxDirections({
             accessToken: mapElement.dataset.mapboxApiKey,
@@ -40,9 +40,11 @@ const initMapbox = () => {
           });
 
 
+
           directions.setOrigin([37.6173, 55.7558])
           directions.setDestination([pharmacyData[0].lng, pharmacyData[0].lat])
           map.addControl(directions);
+
 
           pharmacyData.forEach((pharmacy) => {
             const popup = new mapboxgl.Popup().setHTML(pharmacy.info_window);
@@ -57,6 +59,9 @@ const initMapbox = () => {
           const userMarker = new mapboxgl.Marker()
             .setLngLat(user)
             .addTo(map);
+          setTimeout(()=> {
+            fitMapToMarkers(map, [...pharmacyData, user]);
+          }, 500);
         });
     })
   }
