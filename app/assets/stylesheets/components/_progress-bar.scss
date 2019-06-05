@@ -1,11 +1,9 @@
 .mf-progress-bar-on {
-
-color:$green-principal;
+  color: $green-principal;
 }
 
 .mf-progress-bar-off {
-
-color:$green-secondary;
+  color: $green-secondary;
 }
 
 .progress-container {
@@ -29,8 +27,8 @@ color:$green-secondary;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $dark-gray;
-  font-size: 1.5vw;
+  color: $accent-font;
+  font-size: 2.5vw;
 }
 
 .progress-step p {
@@ -38,8 +36,9 @@ color:$green-secondary;
 }
 
 .circle-fill {
-  width: 1.5em;
-  height: 1.5em;
+  width: 2.4em;
+  height: 2.4em;
+  margin-bottom: 1em;
   border-radius: 50%;
   background: $green-secondary;
 }

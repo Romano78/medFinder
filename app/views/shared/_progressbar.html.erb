@@ -23,26 +23,27 @@
           </div>
         <% end %>
         <% if @home_country %>
-          <p><%= ISO3166::Country[@home_country.capitalize] %> <br> <%= ISO3166::Country[@destination] %></p>
+          <p><%= ISO3166::Country[@home_country].to_s.upcase %> <br> <%= ISO3166::Country[@destination].to_s.upcase %></p>
         <% else %>
-          <p>Home country</p>
+          <p>COUNTRIES</p>
         <% end %>
       </div>
     </div>
 
     <div class="col prog-column">
       <div class="row progress-step">
-        <%= link_to search_medications_path, method: :post do %>
+        <%= link_to search_medications_path do %>
           <div class="circle-fill  <%= @query ? "progress-active" : "" %>">
           </div>
         <% end %>
           <% if @query %>
-          <p><%= @query.capitalize %></p>
+          <p><%= @query.upcase %></p>
         <% else %>
-          <p>Search</p>
+          <p>SEARCH</p>
         <% end %>
       </div>
     </div>
+
     <div class="col prog-column">
       <div class="row progress-step">
         <% if @home_med %>
@@ -50,24 +51,26 @@
             <div class="circle-fill progress-active" >
             </div>
           <% end %>
-          <p><%= @home_med.local_name.capitalize %></p>
+          <p><%= @home_med.local_name.upcase %></p>
         <% else %>
           <div class="circle-fill">
           </div>
-          <p>Selected</p>
+          <p>SELECTED</p>
         <% end %>
       </div>
     </div>
 
-    <div class="col prog-column">
+<!--     <div class="col prog-column">
       <div class="row progress-step">
-          <div class="circle-fill <%= @destination_med ? "progress-active" : "" %>" id="last-circle">
+          <div class="circle-fill <%= @destination_med
+          # ? "progress-active" : ""
+          %>" id="last-circle">
           </div>
         <div id="destination-med">
           <p>Compare</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
