@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :comparison, only: [:show]
 
     collection do
-      post :search
+      get :search
     end
   end
 
