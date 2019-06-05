@@ -3,7 +3,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 24px;
-  margin-bottom: 64px;
+  // margin-bottom: 64px;
   border: solid 1px rgba(118, 118, 118, 0.2);
   border-radius: 1px;
 }
@@ -22,4 +22,8 @@
   font-family: $body-font;
   margin-bottom: 0.5em;
   color: $dark-gray;
+}
+
+.fullheight {
+    min-height: calc(93vh - 86px);
 }

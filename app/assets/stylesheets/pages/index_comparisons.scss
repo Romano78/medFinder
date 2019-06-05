@@ -31,3 +31,15 @@
 .mf-modal-description {
   margin-top: 30px;
 }
+
+
+.arrow-class {
+  position: relative;
+  text-align: center;
+
+  i {
+    text-align: center;
+    font-size: 100px;
+    color: $green-secondary;
+  }
+}

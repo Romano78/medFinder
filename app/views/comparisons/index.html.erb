@@ -1,7 +1,7 @@
 <%= render "shared/progressbar" %>
 
 
-<div class="container fullheight with-progressbar">
+<div class="container with-progressbar">
 
   <div class="mf-medium-card">
     <%= cl_image_tag (@medication.photo) %>
@@ -107,7 +107,10 @@
 
 </div>
 <!-- end of container -->
-
+<div class="arrow-class" id="arrow">
+  <!-- <i class="fas fa-chevron-down"></i> -->
+  <i class="fas fa-chevron-down"></i>
+</div>
 
   <div class="fullheight"
     id="map"
@@ -115,7 +118,10 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
+  <div class="arrow-class" id="bottom-arrow">
+    <i class="fas fa-chevron-up"></i>
 
+  </div>
 
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
