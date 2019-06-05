@@ -34,12 +34,13 @@
 
 .progress-step p {
   text-align: center;
+  color: $medium-gray;
 }
 
 .circle-fill {
-  width: 2.4em;
-  height: 2.4em;
-  margin-bottom: 1em;
+  width: 18px;
+  height: 18px;
+  margin-bottom: 5px;
   border-radius: 50%;
   background: $green-secondary;
   z-index: 10;
@@ -58,19 +59,83 @@
 .background-line {
   position: absolute;
   width: 100vw;
-  top: 10px;
+  top: 8px;
   height: 2px;
   background-color: $light-gray;
   // z-index: 1;
 }
+
 .progress-bar-filled {
   position: absolute;
   width: 1vw;
   left: -20px;
-  top: 10px;
+  top: 8px;
   height: 2px;
   background-color: $green-principal;
   z-index: 2;
+}
+
+@media (min-width: 720px) {
+  .progress-step {
+    font-size: 16px;
+  }
+
+  .circle-fill {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: $green-secondary;
+  z-index: 10;
+  }
+
+  .background-line {
+    position: absolute;
+    height: 2px;
+    top: 16px;
+  }
+
+  .progress-bar-filled {
+    position: absolute;
+    left: -100px;
+    top: 16px;
+    height: 2px;
+    background-color: $green-principal;
+  }
+}
+
+@media (min-width: 960px) {
+  .progress-step {
+    font-size: 24px;
+  }
+
+  .progress-step p {
+    color: $light-gray;
+  }
+
+  .circle-fill {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background: $green-secondary;
+    z-index: 10;
+    margin-top: 8px;
+  }
+
+  .background-line {
+    position: absolute;
+    height: 4px;
+    top: 29px;
+  }
+
+  .progress-bar-filled {
+    position: absolute;
+    left: -100px;
+    top: 29px;
+    height: 4px;
+    background-color: $green-principal;
+  }
 }
 
 
