@@ -1,12 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <% if params[:controller] == "pages" && params[:action] == "home" %>
+    <div>
+    <p class="title-navbar">Travel med</p>
+  </div>
 
-  <div>
-    <%= link_to root_path do %>
-      <%= image_tag "capsule-verte-et-blanche.jpg", class:"logo-large" %>
-    <% end %>
-  <p class="title-navbar">Travel med</p>
-</div>
-
+  <% else %>
+   <div>
+      <%= link_to root_path do %>
+        <%= image_tag "pill_logo.png", class:"logo-large" %>
+      <% end %>
+    <p class="title-navbar">Travel med</p>
+  </div>
+  <% end %>
 
   <div id="navbarSupportedContent">
 

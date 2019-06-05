@@ -9,8 +9,8 @@
 }
 
 .logo-large {
-  width: 50px;
-  margin-left: 5px;
+  width: 23px;
+  margin-left: 0px;
   margin-top:7px;
 }
 .logo-large:hover {
@@ -19,7 +19,7 @@
 
 .title-navbar {
   display:inline;
-  padding-left: 10px;
+  padding-left: 6px;
   vertical-align: bottom;
   font-weight: 800;
   text-transform: uppercase;
@@ -28,7 +28,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-image: linear-gradient(white, transparent);
 }
 
 .navbar-lewagon .navbar-collapse {
