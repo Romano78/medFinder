@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'box-shadow' unless params[:controller] == "pages" && params[:action] == "home" %>">
   <% if params[:controller] == "pages" && params[:action] == "home" %>
     <div>
       <p class="title-navbar">Travel med</p>
