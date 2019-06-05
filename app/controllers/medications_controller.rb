@@ -8,6 +8,19 @@ class MedicationsController < ApplicationController
     else
       @medications = Medication.all
     end
+
+    respond_to do |format|
+      format.html
+      format.js do
+        if @medications.empty?
+          flash[:notice] = "Zero results"
+          # rendering views/medications/index.js.erb
+        else
+          flash.discard
+          render js: "window.location = '#{medications_path(query: params[:query])}'"
+        end
+      end
+    end
   end
 
   def search
