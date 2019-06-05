@@ -1,7 +1,13 @@
 <div class="map-marker">
   <h2><strong><%= name %></strong></h2>
   <p><strong>address:</strong> <%= address %></p>
-  <p><strong>open?</strong> <%= opening_hour %></p>
+  <p><strong>open:</strong>
+    <% if opening_hours %>
+      yes
+    <% else %>
+      no
+    <% end  %>
+    </p>
   <p><strong>rating:</strong> <%= rating %></p>
-  <p><strong>number of ratings:</strong> <%= user_rating %>
+  <p><strong>number of ratings:</strong> <%= user_rating %></p>
 </div>
