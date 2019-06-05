@@ -10,3 +10,13 @@ initMapbox();
 initParticles();
 initCarrousel();
 
+$('#arrow').click(function(){
+  $('html, body').animate({scrollTop : $("#map").offset().top -40},800);
+  return false;
+});
+
+
+$('#bottom-arrow').click(function(){
+  $('html, body').animate({scrollTop : 0},800);
+  return false;
+});

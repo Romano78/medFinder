@@ -10,6 +10,7 @@
   width: 23px;
   margin-left: 0px;
   margin-top:7px;
+  margin-bottom:3px;
 }
 
 .logo-large:hover {
@@ -20,7 +21,7 @@
   display:inline;
   padding-left: 6px;
   vertical-align: bottom;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   color: $green-principal!important;
 }
@@ -28,7 +29,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-image: linear-gradient(white, transparent);
-  box-shadow: 0px 1px 2px rgba(118,118,118,0.3);
 }
 
 .box-shadow{
@@ -57,6 +57,30 @@
   padding-right: 0.8em;
 }
 
+.no-border-focus {
+   //outline: -webkit-focus-ring-color auto 3px;
+ outline: none;
+ outline-style: none;
+ box-shadow: none;
+ border-color: transparent;
+
+  i:focus {
+   outline: none;
+   outline-style: none;
+   box-shadow: none;
+   border-color: transparent;
+
+    border: none;
+  }
+  &:focus {
+    border: none;
+   outline: none;
+   outline-style: none;
+   box-shadow: none;
+   border-color: transparent;
+
+  }
+}
 
 .mf-navbar-brand {
   color: $green-principal;
