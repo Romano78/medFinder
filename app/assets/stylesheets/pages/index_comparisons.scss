@@ -25,9 +25,11 @@
 
 .arrow-class {
   position: relative;
+  text-align: center;
 
   i {
-    position: absolute;
     text-align: center;
+    font-size: 100px;
+    color: $green-secondary;
   }
 }
