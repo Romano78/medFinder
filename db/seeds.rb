@@ -17,36 +17,36 @@ puts "creating Russian medications..."
 
 
 ibuprofen = Medication.create!(
-  local_name: "Ibuprom",
+  local_name: "ибупрофен",
   english_name: "Ibuprofen",
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
   local_description: "Used for treating pain, fever, and inflammation.",
   foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
-  photo: File.open("./app/assets/images/russia/NewIbu.png")
+  photo: File.open("./app/assets/images/russia/IbuprofenRuss.png")
+)
+
+ibuprofen_enfant = Medication.create!(
+  local_name: "Ибупрофен для детей ",
+  english_name: "Ibuprofen for Children",
+  country: "RU",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "противовоспалительное",
+  local_description: "Used for treating pain, fever, and inflammation.",
+  foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
+  photo: File.open("./app/assets/images/russia/Ibuprofe_enfant.png")
 )
 
 ibuprofen_gel = Medication.create!(
-  local_name: "Ibuprom® Sport żel",
-  english_name: "Ibuprom® Sport Gel",
+  local_name: "ибупрофен гель",
+  english_name: "Ibuprofen Gel",
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Ibuprom® Sport gel is a triple action for topical use,which quickly combats various pains in the musculoskeletal system, reduces inflammation and swelling.",
+  local_description: "Used for treating pain, fever, and inflammation.",
   foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
-  photo: File.open("./app/assets/images/russia/NewGel.png")
-)
-
-ibuprofen_ultra_ice = Medication.create!(
-  local_name: "Ultra Ice",
-  english_name: "Ultra Ice",
-  country: "RU",
-  local_category: "Anti-Inflammatory",
-  foreign_category: "противовоспалительное",
-  local_description: "Ultra Ice cooling spray recommended by IBUPROM SPORT is ready-to-use ice cream with immediate cooling effect that instantly relieves pain resulting from injuries.",
-  foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
-  photo: File.open("./app/assets/images/russia/NewIce.png")
+  photo: File.open("./app/assets/images/russia/Ibuprofen_gel_new.png")
 )
 
 paracetamol = Medication.create!(
@@ -277,12 +277,12 @@ MedicationsIngredient.create!(
 
 MedicationsIngredient.create!(
   ingredient_id: ibuprofen_ingredient.id,
-  medication_id: ibuprofen_gel.id
+  medication_id: ibuprofen_enfant.id
 )
 
 MedicationsIngredient.create!(
   ingredient_id: ibuprofen_ingredient.id,
-  medication_id: ibuprofen_ultra_ice.id
+  medication_id: ibuprofen_gel.id
 )
 
 MedicationsIngredient.create!(
