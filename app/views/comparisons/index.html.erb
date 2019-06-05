@@ -87,7 +87,10 @@
           </div>
           <!-- end of medium-card-description -->
           <div class="card-icons">
-            <%= link_to medication_favorites_path(medication.id),method: :post do %>
+            <%= link_to medication_comparison_path(medication), remote: true  do %>
+             <i class="far fa-check-circle"></i>
+            <% end %>
+            <%= link_to medication_favorites_path(medication.id), method: :post do %>
              <i class="fas fa-heart"></i>
             <% end %>
             <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
