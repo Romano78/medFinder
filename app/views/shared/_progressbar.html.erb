@@ -1,16 +1,16 @@
-    <%  @home_country = session[:home_country]
-        @destination = session[:destination]
-        @query = session[:query]
-        if session[:home_med]
-          @home_med = Medication.find(session[:home_med])
-        else
-          @home_med = nil
-        end
-        if session[:destination_med]
-          @destination_med = Medication.find(session[:destination_med])
-        else
-          @destination_med = nil
-        end  %>
+<%  @home_country = session[:home_country]
+    @destination = session[:destination]
+    @query = session[:query]
+    if session[:home_med]
+      @home_med = Medication.find(session[:home_med])
+    else
+      @home_med = nil
+    end
+    if session[:destination_med]
+      @destination_med = Medication.find(session[:destination_med])
+    else
+      @destination_med = nil
+    end  %>
 
 
 <div class="container progress-container">
@@ -19,11 +19,11 @@
     <div class="col prog-column">
       <div class="row progress-step">
         <%= link_to root_path do %>
-          <div class="circle-fill <%= @home_country ? "progress-active" : "" %>">
+          <div class="circle-fill <%= @home_country && @destination ? "progress-active" : "" %>">
           </div>
         <% end %>
         <% if @home_country %>
-          <p><%= ISO3166::Country[@home_country.capitalize] %></p>
+          <p><%= ISO3166::Country[@home_country.capitalize] %> <br> <%= ISO3166::Country[@destination] %></p>
         <% else %>
           <p>Home country</p>
         <% end %>
@@ -39,7 +39,7 @@
           <% if @query %>
           <p><%= @query.capitalize %></p>
         <% else %>
-          <p>Search medication</p>
+          <p>Search</p>
         <% end %>
       </div>
     </div>
@@ -54,19 +54,7 @@
         <% else %>
           <div class="circle-fill">
           </div>
-          <p>Selected medication</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col prog-column">
-      <div class="row progress-step">
-          <div class="circle-fill <%= @destination ? "progress-active" : "" %>">
-          </div>
-        <% if @destination %>
-          <p><%= ISO3166::Country[@destination] %></p>
-        <% else %>
-          <p>Visiting country</p>
+          <p>Selected</p>
         <% end %>
       </div>
     </div>
@@ -76,7 +64,7 @@
           <div class="circle-fill <%= @destination_med ? "progress-active" : "" %>" id="last-circle">
           </div>
         <div id="destination-med">
-          <p>Destination medication</p>
+          <p>Compare</p>
         </div>
       </div>
     </div>

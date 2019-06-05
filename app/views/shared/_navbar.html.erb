@@ -3,7 +3,6 @@
     <div>
     <p class="title-navbar">Travel med</p>
   </div>
-
   <% else %>
    <div>
       <%= link_to root_path do %>
@@ -36,11 +35,26 @@
         </li>
       <% end %>
     </ul>
+
+  <div>
+    <%= link_to root_path do %>
+      <%= image_tag "capsule-verte-et-blanche.jpg", class:"logo-large" %>
+    <% end %>
+    <p class="title-navbar">Travel med</p>
   </div>
+
+  <% if user_signed_in? %>
+    <div class="dropdown">
+      <%= image_tag "avatar-picture.JPG", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link nav-item" %>
+  <% end %>
 </div>
-
-
-
 
 
 
