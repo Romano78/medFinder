@@ -9,7 +9,7 @@
         <div class="medium-card-description">
           <h6><%= favorite.medication.local_name %></h6>
           <p><%= favorite.medication.local_description %></p>
-          <div id="btn-styles">
+          <div class="text-right">
             <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete do %>
               <i class="fas fa-trash-alt"></i>
             <% end %>
@@ -25,7 +25,7 @@
         <div class="medium-card-description">
           <h6><%= home_med.local_name %></h6>
           <p><%= home_med.local_description %></p>
-          <div id="btn-styles">
+          <div class="text-right">
             <%= link_to medication_favorite_path(home_med,favorite),method: :delete  do %>
               <i class="fas fa-trash-alt"></i>
             <% end %>
