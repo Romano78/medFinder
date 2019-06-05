@@ -11,7 +11,7 @@ select,
   text-align-last:center;
   text-transform: uppercase !important;
   letter-spacing: 3px !important;
-  border-radius:3px;
+  border-radius:155px;
   padding: 26px;
 
   &:focus {
@@ -48,18 +48,22 @@ form > span {
     outline: -webkit-focus-ring-color auto 3px;
     outline-color: #343a40;
     background: $green-secondary !important;
+
   }
 }
 
 
 .select2-container .select2-selection--single{
-
   margin-bottom: 30px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered{
   color: $light-gray;
 
+}
+
+.select2-container--default .select2-selection--single{
+  border-radius:155px!important;
 }
 
 
