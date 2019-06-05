@@ -11,6 +11,15 @@
   color: $light-gray;
 }
 
+#particles-js {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
 
 // .home {
 //   background-image: image-url('background_home.png'); // link to /assets/images/texture.png

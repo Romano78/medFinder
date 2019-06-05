@@ -5,8 +5,8 @@
     <h2 class="search-title">what medication are you searching for?</h2>
   </div>
 
-  <%= form_tag medications_path, method: :get, class:"w-100 text-center" do |f| %>
-      <input placeholder="name or active ingredient" class="string required" type="text" name="query" id="search-query"/>
+  <%= form_tag medications_path, method: :get, remote: true, class:"w-100 text-center" do |f| %>
+      <input placeholder="name or active ingredient" class="string required" type="text" autocomplete="off" name="query" id="search-query"/>
 
       <%= submit_tag "search" , class:"mf-button", disabled: true, id: "search-country-btn" %>
   <% end %>
