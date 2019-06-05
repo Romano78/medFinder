@@ -98,7 +98,7 @@
              <% end %>
 
             <% end %>
-            <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+            <%= link_to  medication_comparison_path(medication.id),class: "no-border-focus", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
               <i class="far fa-question-circle"></i>
             <% end %>
           </div>
