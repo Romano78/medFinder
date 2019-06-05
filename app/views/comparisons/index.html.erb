@@ -90,14 +90,16 @@
             <%= link_to medication_comparison_path(medication), class: "no-border-focus", remote: true  do %>
              <i class="far fa-check-circle"></i>
             <% end %>
-            <%= link_to medication_favorites_path(medication.id), class: "no-border-focus", method: :post, remote: true   do %>
-             <% if current_user.favorites.find_by(medication_id: medication.id).nil? %>
-             <i class="far fa-heart"></i>
-             <% else %>
-             <i class="fas fa-heart"></i>
-             <% end %>
-
+            <% if user_signed_in? %>
+              <%= link_to medication_favorites_path(medication.id), class: "no-border-focus", method: :post, remote: true   do %>
+                <% if current_user.favorites.find_by(medication_id: medication.id).nil? %>
+                  <i class="far fa-heart"></i>
+                <% else %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% end %>
             <% end %>
+
             <%= link_to  medication_comparison_path(medication.id),class: "no-border-focus", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
               <i class="far fa-question-circle"></i>
             <% end %>
