@@ -10,7 +10,7 @@
           <h6><%= favorite.medication.local_name %></h6>
           <p><%= favorite.medication.local_description %></p>
           <div class="text-right">
-            <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete do %>
+            <%= link_to medication_favorite_path(favorite.medication,favorite), class: "no-border-focus", method: :delete do %>
               <i class="fas fa-trash-alt"></i>
             <% end %>
           </div>
