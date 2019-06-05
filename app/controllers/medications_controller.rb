@@ -26,6 +26,7 @@ class MedicationsController < ApplicationController
   def search
     session[:home_med] = nil
     session[:destination_med] = nil
+    session[:query] = nil
     if params[:user]
       session[:home_country] = params[:user][:home_country]
       session[:destination] = params[:user][:visiting_country]
