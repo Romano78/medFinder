@@ -21,6 +21,23 @@
   opacity: 0.6;
 }
 
+.mf-button-home{
+  width: 100%;
+  display: block;
+  background: $green-secondary;
+  color: $green-principal;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  opacity: 1;
+
+}
+
 .mf-button:hover {
   background: $green-principal;
   color: $green-secondary;

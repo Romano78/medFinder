@@ -10,25 +10,25 @@ const particlesOptions = {
       }
     },
     "color": {
-      "value": "#ffffff"
+      "value": "#2b6d14"
     },
     "shape": {
-      "type": "circle",
+      "type": "image",
       "stroke": {
         "width": 0,
         "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 6
       },
       "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
+        "src": "https://res.cloudinary.com/kristynadierstein/image/upload/v1559695053/pill-64_1_kdddxz.png",
+        "width": 350,
+        "height": 350
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.5852454022159158,
       "random": false,
       "anim": {
         "enable": false,
@@ -38,26 +38,26 @@ const particlesOptions = {
       }
     },
     "size": {
-      "value": 10,
+      "value": 7,
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 80,
+        "speed": 40,
         "size_min": 0.1,
         "sync": false
       }
     },
     "line_linked": {
       "enable": true,
-      "distance": 300,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 2
+      "distance": 150,
+      "color": "#2B6D14",
+      "opacity": .3,
+      "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 12,
-      "direction": "none",
+      "speed": 2,
+      "direction": "top",
       "random": false,
       "straight": false,
       "out_mode": "out",
@@ -84,20 +84,20 @@ const particlesOptions = {
     },
     "modes": {
       "grab": {
-        "distance": 800,
+        "distance": 400,
         "line_linked": {
           "opacity": 1
         }
       },
       "bubble": {
-        "distance": 800,
-        "size": 80,
+        "distance": 400,
+        "size": 40,
         "duration": 2,
-        "opacity": 0.8,
+        "opacity": 8,
         "speed": 3
       },
       "repulse": {
-        "distance": 400,
+        "distance": 200,
         "duration": 0.4
       },
       "push": {
@@ -112,11 +112,10 @@ const particlesOptions = {
 }
 
 
-
 const initParticles = () => {
   const ParticleElement = document.getElementById('particles-js');
   if (ParticleElement) {
-    particlesJS.load('particles-js', particlesOptions, function() {
+    particlesJS('particles-js', particlesOptions, function() {
       console.log('callback - particles.js config loaded');
     });
   }
