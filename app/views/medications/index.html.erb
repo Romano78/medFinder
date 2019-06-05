@@ -6,13 +6,13 @@
       <% @medications.each do |medication| %>
         <div class="modal fade" id="medication_<%= medication.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
+            <div class="modal-content mf-modal-content">
+              <div class="modal-body d-flex flex-direction-column justify-content-center">
                 <div class="profile-banner d-flex align-items-center" id="user-profile">
                   <div class="mf-big-card">
                     <%= cl_image_tag(medication.photo, width: 250) %>
-                    <div>
                       <h5><%= medication.local_name %></h5>
+                    <div class="mf-modal-description">
                       <h6>category:</h6> <p><%= medication.local_category %></p>
                       <% medication.ingredients.each do |ingredient| %>
                         <h6>active ingredient:</h6> <p><%= ingredient.name %></p>

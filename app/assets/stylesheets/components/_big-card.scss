@@ -2,15 +2,18 @@ img {
   max-width: 100%;
 }
 .mf-big-card {
+display: flex;
+flex-direction: column;
+justify-content: center;
 font-family: $body-font;
 font-weight: 300;
 font-size: .8rem;
-width: 80vw;
+height: 60vh;
 margin:auto;
 background: #fff;
-box-shadow: 0 5px 9px rgba(0,0,0,.08);
+// box-shadow: 0 5px 9px rgba(0,0,0,.08);
 padding:24px;
-border: 1px solid #deeecb;
+// border: 1px solid #deeecb;
 border-radius: 3px;
 padding: 0 20px ;
 .mf-button{
@@ -18,13 +21,21 @@ padding: 0 20px ;
   display:block;
 }
 h5{
+color: $dark-gray;
 margin-top:15px;
 font-weight:600;
 font-size: 1rem;
+text-align:center;
+letter-spacing: 2px;
+text-transform: uppercase;
 }
 h6{
   font-weight:400;
   font-size: .7rem;
+  font-family: $accent-font;
+  color: $light-gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 p{
   font-weight:300;

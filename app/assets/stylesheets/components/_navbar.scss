@@ -23,7 +23,7 @@
   vertical-align: bottom;
   font-weight: 800;
   text-transform: uppercase;
-  color: $light-gray;
+  color: $green-principal!important;
 }
 
 .navbar-lewagon {
@@ -51,4 +51,10 @@
   color: $light-gray;
   padding-top: 0.8em;
   padding-right: 0.8em;
+}
+
+
+.mf-navbar-brand {
+  color: $green-principal;
+
 }
