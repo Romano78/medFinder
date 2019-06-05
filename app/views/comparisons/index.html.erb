@@ -73,12 +73,12 @@
       <div class="cards-carousel" id="carousel">
 
       <% @medications.each do |medication| %>
-
+        <%= @medication_id = medication.id %>
         <div class="carousel-medium-card">
           <%= cl_image_tag(medication.photo, class: "carousel-img")%>
           <div class='carousel-medium-card-description'>
             <%= link_to medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
-              <h2><%= medication.english_name %></h2>
+              <h2><%= medication.local_name %></h2>
             <% end %>
 
             <% medication.ingredients.each do |ingredient| %>
@@ -86,21 +86,13 @@
             <% end %>
           </div>
           <!-- end of medium-card-description -->
-          <div class="card-icons">
+          <div class="card-icons" id='<%= medication.id  %>'>
             <%= link_to medication_comparison_path(medication), remote: true  do %>
              <i class="far fa-check-circle"></i>
             <% end %>
-            <%= link_to medication_favorites_path(medication.id), class: "no-border-focus", method: :post, remote: true   do %>
-             <% if current_user.favorites.find_by(medication_id: medication.id).nil? %>
-             <i class="far fa-heart"></i>
-             <% else %>
-             <i class="fas fa-heart"></i>
-             <% end %>
+            <% @favorite = current_user.favorites.find_by(medication_id: @medication_id)  %>
+            <%= render 'favorites/favorite_med' %>
 
-            <% end %>
-            <%= link_to  medication_comparison_path(medication.id), data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
-              <i class="far fa-question-circle"></i>
-            <% end %>
           </div>
         </div>
         <!-- end of medium-card-country-info -->

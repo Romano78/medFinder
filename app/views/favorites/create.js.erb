@@ -1,0 +1,18 @@
+// select heart element from the DOM
+// remove its class 'far'
+// add class 'fas'
+
+
+element = document.getElementById('<%= @medication_id %>')
+
+element.innerHTML = ("<%= j (render partial: 'favorites/favorite_med') %>")
+
+//element.classList.remove('far')
+
+//element.classList.add('fas')
+// debugger;
+// element = document.querySelector(".far .fa-heart");
+// element.classList.remove("fa-heart");
+
+//   const circle = document.querySelector('last-circle')
+//   circle.classList.add('progress-active')

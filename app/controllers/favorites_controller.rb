@@ -6,7 +6,12 @@ class FavoritesController < ApplicationController
       home_medication_id: session[:home_med]
       )
 
-    redirect_to dashboard_path
+    @medication_id = params[:medication_id]
+
+    respond_to do |format|
+      # format.html { redirect_to  }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   def destroy
@@ -14,5 +19,18 @@ class FavoritesController < ApplicationController
     @favorite.destroy
 
     redirect_to dashboard_path
+  end
+
+  def unfavorite
+
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+
+    @medication_id = @favorite.medication.id
+
+    respond_to do |format|
+      # format.html { redirect_to  }
+      format.js  # <-- will render `unfavorite.js.erb`
+    end
   end
 end

@@ -1,0 +1,5 @@
+element = document.getElementById('med<%= @medication_id %>')
+
+element = document.getElementById('<%= @medication_id %>')
+
+element.innerHTML = ("<%= j (render partial: 'favorites/favorite_med') %>")
