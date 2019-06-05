@@ -1,6 +1,6 @@
 .container-dashboard {
   .mf-medium-card {
-    height: auto;
+    height: 300px;
     margin-bottom: 10px;
   }
 
@@ -21,7 +21,38 @@
   color: $light-gray;
 }
 
+#favourites-tabs {
+  display: flex;
+}
 
+
+.mf-medium-card-test {
+  align-items:center;
+  display:flex;
+  height:140px;
+  box-shadow: 0 5px 9px rgba(0,0,0,.08);
+  border: 1px solid #deeecb;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  img {
+    width: 40%;
+    height:60%;
+    flex-grow:0;
+  object-fit:cover;
+  }
+}
+
+
+.dashboard-pills {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.favourite-card .fa-trash-alt {
+  bottom: 3px;
+  right: 3px;
+}
 
 
 
