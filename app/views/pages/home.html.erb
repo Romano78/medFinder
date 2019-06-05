@@ -11,11 +11,10 @@
 
 
   <div class="form-tag">
-    <%= form_tag(search_medications_path, class:"w-100 text-center") do %>
+    <%= form_tag(search_medications_path, method: :get, class:"w-100 text-center") do %>
       <%= country_select("user", "home_country", { include_blank: 'Home country' }, {class: "country-selection select"}) %>
       <%= country_select('user', "visiting_country", { include_blank: 'Visiting country' }, {class: "country-selection select"}) %>
       <%= submit_tag "search" ,class:"mf-button-home"%>
-
     <% end %>
   </div>
 
