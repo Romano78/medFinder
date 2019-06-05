@@ -15,11 +15,18 @@
 
 <div class="container progress-container">
   <div class="row prog-line">
+    <div class="background-line"></div>
+    <% progress = "25%" if @home_country && @destination %>
+    <% progress = "55%" if @query %>
+    <% progress = "110%" if @home_med %>
+    <div class="progress-bar-width" data-progress="<%= progress %>"></div>
+
+    <div class="progress-bar-filled"></div>
 
     <div class="col prog-column">
-      <div class="row progress-step">
+      <div class="row progress-step <%= @home_country && @destination ? "progress-active" : "" %>" >
         <%= link_to root_path do %>
-          <div class="circle-fill <%= @home_country && @destination ? "progress-active" : "" %>">
+          <div class="circle-fill">
           </div>
         <% end %>
         <% if @home_country %>
@@ -31,13 +38,14 @@
     </div>
 
     <div class="col prog-column">
-      <div class="row progress-step">
+      <div class="row progress-step <%= @query ? "progress-active" : "" %>">
         <%= link_to search_medications_path do %>
-          <div class="circle-fill  <%= @query ? "progress-active" : "" %>">
+          <div class="circle-fill">
           </div>
         <% end %>
           <% if @query %>
-          <p><%= @query.upcase %></p>
+            <div class="progress-bar-width" data-progress="50%"></div>
+            <p><%= @query.upcase %></p>
         <% else %>
           <p>SEARCH</p>
         <% end %>
@@ -45,10 +53,10 @@
     </div>
 
     <div class="col prog-column">
-      <div class="row progress-step">
+      <div class="row progress-step <%= @home_med ? "progress-active" : "" %>">
         <% if @home_med %>
           <%= link_to medication_comparisons_path(@home_med) do %>
-            <div class="circle-fill progress-active" >
+            <div class="circle-fill" >
             </div>
           <% end %>
           <p><%= @home_med.local_name.upcase %></p>
@@ -75,3 +83,4 @@
   </div>
 </div>
 
+<%= javascript_pack_tag 'prog_bar_line' %>
