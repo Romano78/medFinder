@@ -54,7 +54,7 @@
                           <p><%= medication.foreign_category %></p>
                           <% medication.ingredients.each do |ingredient| %>
                           <h6>active ingredient:</h6>
-                            <p><%= ingredient.name %></p>
+                            <p><%= ingredient.local_name %></p>
                           <% end %>
                          <h6>description:</h6>
                           <p><%= medication.foreign_description %></p>
@@ -87,7 +87,7 @@
             <% end %>
 
             <% medication.ingredients.each do |ingredient| %>
-              <p>active ingredient: <%= ingredient.name %></p>
+              <p>active ingredient: <%= ingredient.local_name %></p>
             <% end %>
           </div>
           <!-- end of medium-card-description -->

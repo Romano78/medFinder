@@ -103,8 +103,8 @@ tussin_plus = Medication.create!(
 )
 
 caffetin_cold = Medication.create!(
-  local_name: "Caffetin_cold",
-  english_name: "Caffetin_cold",
+  local_name: "КАФЕТИН КОЛД",
+  english_name: "Caffetin Cold",
   country: "RU",
   local_category: "Cough Suppressants",
   foreign_category: "средства от кашля",
@@ -147,8 +147,8 @@ advil = Medication.create!(
 )
 
 advil_gel = Medication.create!(
-  local_name: "Advil Antalgic Gel",
-  english_name: "Advil Antalgic Gel",
+  local_name: "Advil Gels PM",
+  english_name: "Advil Gels PM",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -209,27 +209,32 @@ imodiumCanada = Medication.create!(
   puts "creating ingredients..."
 
 paracetamol_ingredient = Ingredient.create!(
-  name: "Paracetamol"
+  name: "Paracetamol",
+  local_name: "Парацетамол"
 )
 
 
 ibuprofen_ingredient = Ingredient.create!(
-  name: "Ibuprofen"
+  name: "Ibuprofen",
+  local_name: "Ибупрофен"
 
 )
 
 liqueur_ingredient = Ingredient.create!(
-name: 'liquor'
+name: 'liquor',
+local_name: "щелок"
 )
 
 
 dextromethorphan = Ingredient.create!(
-name: "Dextromethorphan"
+name: "Dextromethorphan",
+local_name: "декстрометорфан"
 
 )
 
 loperamide = Ingredient.create!(
-  name: "loperamide"
+  name: "loperamide",
+  local_name: "лоперамид"
 )
 
 MedicationsIngredient.create!(
