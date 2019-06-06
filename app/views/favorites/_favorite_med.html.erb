@@ -1,0 +1,10 @@
+
+  <% if @favorite.nil? %>
+    <%= link_to medication_favorites_path(@medication_id), class: "no-border-focus", method: :post, remote: true   do %>
+      <i id='med<%= @medication_id  %>' class="far fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to unfavorite_path(@favorite.id), class: "no-border-focus", method: :delete, remote: true   do %>
+      <i id='med<%= @medication_id  %>' class="fas fa-heart"></i>
+    <% end %>
+  <% end %>

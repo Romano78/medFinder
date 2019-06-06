@@ -1,0 +1,12 @@
+element = document.getElementById('med<%= @medication_id %>')
+
+<% if @favorite.nil? %>
+  element.classList.remove('fas')
+  element.classList.add('far')
+<% else %>
+  element.classList.add('fas')
+  element.classList.remove('far')
+<%  end %>
+
+
+
