@@ -6,12 +6,16 @@
   border: 1px solid #deeecb;
   background: #fff;
   border-radius: 3px;
-img {
-  width: 40%;
-  height:60%;
-  flex-grow:0;
-object-fit:cover;
+  img {
+    width: 40%;
+    height:60%;
+    flex-grow:0;
+  object-fit:cover;
+  }
 }
+
+#pills-tabContent{
+  padding: 10px;
 }
 
 .medium-card-description

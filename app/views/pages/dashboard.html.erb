@@ -1,46 +1,80 @@
 <div class="container fullheight container-dashboard">
-  <h1 class="title-dashboard">Favorites medications</h1>
+  <h1 class="title-dashboard">Favourite medications</h1>
 
-  <%  current_user.favorites.each do |favorite| %>
+  <%  current_user.favorites.each_with_index do |favorite, index| %>
 
-    <div class="carrousel-equivalent">
-      <div class="mf-medium-card">
-        <%= cl_image_tag(favorite.medication.photo) %>
-        <div class="medium-card-description">
-          <h6><%= favorite.medication.local_name %></h6>
-          <p><%= favorite.medication.local_description %></p>
-          <div class="text-right">
-            <%= link_to medication_favorite_path(favorite.medication,favorite), class: "no-border-focus", method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
+    <div class="favourite-card">
+
+        <ul class="nav nav-pills dashboard-pills" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-favourite-<%= index %>-tab" data-toggle="pill" href="#pills-favourite-<%= index %>" role="tab" aria-controls="pills-favourite-<%= index %>" aria-selected="true">Favourite</a>
+          </li>
+          <% unless favorite.home_medication_id.nil? %>
+          <% home_med =  Medication.find(favorite.home_medication_id) %>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-home-version-<%= index.to_s + home_med.id.to_s %>-tab" data-toggle="pill" href="#pills-home-version-<%= index.to_s + home_med.id.to_s %>" role="tab" aria-controls="pills-home-version-<%= index.to_s + home_med.id.to_s %>" aria-selected="false">Home version</a>
+            </li>
+          <% end %>
+        </ul>
+        <div class="tab-content">
+           <div class="tab-pane fade show active" id="pills-favourite-<%= index %>" role="tabpanel" aria-labelledby="pills-favourite-<%= index %>-tab">
+            <div class="mf-medium-card-test">
+              <%= cl_image_tag (favorite.medication.photo) %>
+              <div class="medium-card-description py-0">
+                <h5><%= favorite.medication.english_name %></h5>
+                <h6>category:</h6>
+                  <p><%= favorite.medication.local_category %></p>
+                <% favorite.medication.ingredients.each do |ingredient| %>
+                  <h6>active ingredient:</h6>
+                    <p><%= ingredient.name %></p>
+                <% end %>
+              </div>
+              <div class="text-right">
+                <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete  do %>
+                  <i class="fas fa-trash-alt align-bottom"></i>
+                <% end %>
+              </div>
+            </div>
           </div>
-        </div>
+          <% unless favorite.home_medication_id.nil? %>
+
+          <div class="tab-pane fade" id="pills-home-version-<%= index.to_s + home_med.id.to_s %>" role="tabpanel" aria-labelledby="pills-home-version-<%= home_med.id %>-tab">
+
+             <div class="mf-medium-card-test">
+                <%= cl_image_tag(home_med.photo) %>
+                <div class=medium-card-description>
+                <h5><%= home_med.local_name %></h5>
+                <h6>category:</h6>
+                  <p><%= home_med.local_category %></p>
+                <% home_med.ingredients.each do |ingredient| %>
+                  <h6>active ingredient:</h6>
+                    <p><%= ingredient.name %></p>
+                <% end %>
+                </div>
+                 <div class="text-right">
+                <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete  do %>
+                  <i class="fas fa-trash-alt align-bottom"></i>
+                <% end %>
+              </div>
+              </div>
+
+          </div>
+
+           <% end %>
+
+      <!-- End of div class="tab-content" -->
       </div>
 
-    <% unless favorite.home_medication_id.nil? %>
-    <% home_med =  Medication.find(favorite.home_medication_id) %>
+    <!--End of div class="mf-medium-card"  -->
+    </div>
 
-     <div class="mf-medium-card">
-        <%= cl_image_tag(home_med.photo) %>
-        <div class="medium-card-description">
-          <h6><%= home_med.local_name %></h6>
-          <p><%= home_med.local_description %></p>
-          <div class="text-right">
-            <%= link_to medication_favorite_path(home_med,favorite),method: :delete  do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-
+  <!-- End of current user.favorites each do  -->
   <% end %>
 
   <div id="btn-styles">
     <a href="<%= root_path %>" class="mf-button">add a new favorite</a>
   </div>
+
 </div>
 
 

@@ -1,13 +1,19 @@
 <div class="map-marker">
   <h2><strong><%= name %></strong></h2>
   <p><strong>address:</strong> <%= address %></p>
-  <p><strong>open:</strong>
+  <p>
     <% if opening_hours %>
-      yes
+      <span class="map-marker-open">open</span>
     <% else %>
-      no
+      <span class="map-marker-close">close</span>
     <% end  %>
+  </p>
+  <% if user_rating > 0 %>
+    <p>
+      <% rating.to_i.times do  %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      (<%= user_rating %>)
     </p>
-  <p><strong>rating:</strong> <%= rating %></p>
-  <p><strong>number of ratings:</strong> <%= user_rating %></p>
+  <% end  %>
 </div>

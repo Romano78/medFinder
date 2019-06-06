@@ -1,7 +1,7 @@
 <%= render "shared/progressbar" %>
 
 
-<div class="container with-progressbar">
+<div class="container fullheight with-progressbar">
 
   <div class="mf-medium-card">
     <%= cl_image_tag (@medication.photo) %>
@@ -28,14 +28,14 @@
                     <%= cl_image_tag(medication.photo, width: 250) %>
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">English</a>
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home-<%= medication.id %>" role="tab" aria-controls="pills-home" aria-selected="true">English</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="pills-local-tab" data-toggle="pill" href="#pills-local" role="tab" aria-controls="pills-local" aria-selected="false">Local</a>
+                        <a class="nav-link" id="pills-local-tab" data-toggle="pill" href="#pills-local-<%= medication.id %>" role="tab" aria-controls="pills-local" aria-selected="false">Local</a>
                       </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
-                      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                      <div class="tab-pane fade show active" id="pills-home-<%= medication.id %>" role="tabpanel" aria-labelledby="pills-home-tab">
                         <h5><%= medication.english_name %></h5>
                         <h6>category:</h6>
                           <p><%= medication.local_category %></p>
@@ -46,7 +46,7 @@
                         <h6>description:</h6>
                           <p><%= medication.local_description %></p>
                       </div>
-                      <div class="tab-pane fade" id="pills-local" role="tabpanel" aria-labelledby="pills-local-tab">
+                      <div class="tab-pane fade" id="pills-local-<%= medication.id %>" role="tabpanel" aria-labelledby="pills-local-tab">
                          <h5><%= medication.local_name %></h5>
                          <h6>category:</h6>
                           <p><%= medication.foreign_category %></p>
@@ -98,6 +98,10 @@
                 <i id='med<%= medication.id %>' class="fas fa-heart"></i>
               <% end %>
             <% end %>
+              <%= link_to  medication_comparison_path(medication.id),class: "no-border-focus", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
+              <i class="far fa-question-circle"></i>
+
+            <% end %>
           </div>
         </div>
         <!-- end of medium-card-country-info -->
@@ -109,10 +113,7 @@
 
 </div>
 <!-- end of container -->
-<div class="arrow-class" id="arrow">
-  <!-- <i class="fas fa-chevron-down"></i> -->
-  <i class="fas fa-chevron-down"></i>
-</div>
+
 
   <div class="fullheight"
     id="map"
@@ -120,10 +121,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
-  <div class="arrow-class" id="bottom-arrow">
-    <i class="fas fa-chevron-up"></i>
 
-  </div>
 
 <%= javascript_pack_tag 'select2' %>
 <%= stylesheet_pack_tag 'select2' %>
