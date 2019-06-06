@@ -10,11 +10,18 @@ Favorite.destroy_all
 MedicationsIngredient.destroy_all
 Medication.destroy_all
 Ingredient.destroy_all
+User.destroy_all
 
 puts "creating Russian medications..."
 
 
-
+canadian_syrup = Medication.create!(
+  local_name: "Maple Whiskey Liqueur",
+  country: "CA",
+  local_category: "Natural Pain Killer",
+  local_description:"The excessive consumption of alcohol can cause harm to your health.",
+  photo: File.open("./app/assets/images/canada/CanadaLiqeur.png")
+)
 
 ibuprofen = Medication.create!(
   local_name: "ибупрофен",
@@ -29,7 +36,7 @@ ibuprofen = Medication.create!(
 
 ibuprofen_enfant = Medication.create!(
   local_name: "Ибупрофен для детей ",
-  english_name: "Ibuprofen for Children",
+  english_name: "Ibuprofen Kid",
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
@@ -210,9 +217,11 @@ ibuprofen_ingredient = Ingredient.create!(
   name: "Ibuprofen"
 
 )
-vodka_ingredient = Ingredient.create!(
-name: 'Vodka'
+
+liqueur_ingredient = Ingredient.create!(
+name: 'liquor'
 )
+
 
 dextromethorphan = Ingredient.create!(
 name: "Dextromethorphan"
@@ -229,8 +238,12 @@ MedicationsIngredient.create!(
 )
 
 MedicationsIngredient.create!(
-  ingredient_id: vodka_ingredient.id,
+  ingredient_id: liqueur_ingredient.id,
   medication_id: russian_vodka.id
+)
+MedicationsIngredient.create!(
+  ingredient_id: liqueur_ingredient.id,
+  medication_id: canadian_syrup.id
 )
 
 
@@ -309,12 +322,17 @@ MedicationsIngredient.create!(
 Medication.reindex!
 
 
-puts "finished"
-
-User.destroy_all
 
 User.create!(
-  email:"user@gmail.com",
+  email:"romain@gmail.com",
   password:"lewagon",
 )
+
+User.create!(
+  email:"rom@gmail.com",
+  password:"lewagons",
+)
+
+puts "finished"
+
 
