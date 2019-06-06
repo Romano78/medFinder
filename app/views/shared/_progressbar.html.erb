@@ -13,11 +13,12 @@
     end  %>
 
 
-<div class="container progress-container">
+<!-- <div class="container progress-container"> -->
+<div style="margin-top: 5px; max-width: 100vw !important; overflow: hidden; position: relative;">
   <div class="row prog-line">
     <div class="background-line"></div>
-    <% progress = "25%" if @home_country && @destination %>
-    <% progress = "55%" if @query %>
+    <% progress = "20%" if @home_country && @destination %>
+    <% progress = "53%" if @query %>
     <% progress = "115%" if @home_med %>
     <div class="progress-bar-width" data-progress="<%= progress %>"></div>
 
