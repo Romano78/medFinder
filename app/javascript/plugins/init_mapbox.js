@@ -24,7 +24,7 @@ const initMapbox = () => {
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v10'
           });
-
+          //map.scrollZoom.disable();
 
 
           const directions = new MapboxDirections({
