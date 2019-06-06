@@ -9,6 +9,11 @@
     <% end  %>
   </p>
   <% if user_rating > 0 %>
-    <p><strong>rating:</strong> <%= rating %> (<%= user_rating %>)</p>
+    <p>
+      <% rating.to_i.times do  %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      (<%= user_rating %>)
+    </p>
   <% end  %>
 </div>
