@@ -52,6 +52,10 @@
                          <h5><%= medication.local_name %></h5>
                          <h6>category:</h6>
                           <p><%= medication.foreign_category %></p>
+                          <% medication.ingredients.each do |ingredient| %>
+                          <h6>active ingredient:</h6>
+                            <p><%= ingredient.name %></p>
+                          <% end %>
                          <h6>description:</h6>
                           <p><%= medication.foreign_description %></p>
                       </div>
