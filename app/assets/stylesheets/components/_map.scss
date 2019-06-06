@@ -24,6 +24,14 @@
   color: $dark-gray;
 }
 
+.map-marker-close {
+  color: $red;
+}
+
+.map-marker-open {
+  color: $green-principal;
+}
+
 .fullheight {
     min-height: calc(93vh - 86px);
 }
