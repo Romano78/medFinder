@@ -126,6 +126,7 @@ imodium = Medication.create!(
 
 russian_vodka = Medication.create!(
   local_name: "Belugia",
+  english_name: "Belugia",
   country: "RU",
   local_category: "Natural Pain Killer",
   local_description:"The excessive consumption of alcohol can cause harm to your health.",
@@ -243,7 +244,7 @@ MedicationsIngredient.create!(
 )
 
 MedicationsIngredient.create!(
-  ingredient_id: liqueur_ingredient.id,
+  ingredient_id: dextromethorphan.id,
   medication_id: russian_vodka.id
 )
 MedicationsIngredient.create!(
