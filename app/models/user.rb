@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :medications, through: :favorites
   has_many :favorites
+
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  delete "unfavorite/:id", to:"favorites#unfavorite", as: "unfavorite"
+  post "favorite/:id", to:"favorites#favorite", as: "favorite"
  resource :map, only: [:show] do
   collection do
     get :nearby_pharmacy

@@ -1,18 +1,4 @@
 class FavoritesController < ApplicationController
-  def create
-    @favorite = Favorite.create(
-      user: current_user,
-      medication_id: params[:medication_id],
-      home_medication_id: session[:home_med]
-      )
-
-    @medication_id = params[:medication_id]
-
-    respond_to do |format|
-      # format.html { redirect_to  }
-      format.js  # <-- will render `app/views/reviews/create.js.erb`
-    end
-  end
 
   def destroy
     @favorite = Favorite.find(params[:id])
@@ -21,12 +7,17 @@ class FavoritesController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def unfavorite
+  def favorite
+    @favorite = current_user.favorites.find_by(medication_id: params[:id])
+    @medication_id = Medication.find_by(id: params[:id]).id
 
-    @favorite = Favorite.find(params[:id])
-    @favorite.destroy
+    if @favorite.nil?
+      @favorite = Favorite.create(user: current_user, medication_id: params[:id], home_medication_id: session[:home_med])
 
-    @medication_id = @favorite.medication.id
+    else
+      @favorite.destroy
+      @favorite = nil
+    end
 
     respond_to do |format|
       # format.html { redirect_to  }

@@ -90,9 +90,14 @@
             <%= link_to medication_comparison_path(medication), remote: true  do %>
              <i class="far fa-check-circle"></i>
             <% end %>
-            <% @favorite = current_user.favorites.find_by(medication_id: @medication_id)  %>
-            <%= render 'favorites/favorite_med' %>
 
+            <%= link_to favorite_path(medication.id), class: "no-border-focus", method: :post, remote: true   do %>
+              <% if current_user && current_user.favorites.find_by(medication_id: medication.id).nil? %>
+                <i id='med<%= medication.id %>' class="far fa-heart"></i>
+              <% elsif current_user %>
+                <i id='med<%= medication.id %>' class="fas fa-heart"></i>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <!-- end of medium-card-country-info -->
