@@ -43,3 +43,10 @@
     color: $green-secondary;
   }
 }
+
+
+.nav-pills .nav-link.active{
+  background-color: $green-secondary;
+  border-radius: 155px;
+  color: #2B6D14
+}
