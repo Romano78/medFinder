@@ -1,5 +1,5 @@
 meta_product_name: "Travel Med"
 meta_title: "Travel Med - Traveler's Guide To Medicine"
 meta_description: "Find the equivalent of your  local medicine"
-meta_image: "mario_cover.jpeg" # should exist in `app/assets/images/`
+meta_image: "pill-cover.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards

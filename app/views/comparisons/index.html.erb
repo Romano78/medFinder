@@ -54,7 +54,7 @@
                           <p><%= medication.foreign_category %></p>
                           <% medication.ingredients.each do |ingredient| %>
                           <h6>active ingredient:</h6>
-                            <p><%= ingredient.name %></p>
+                            <p><%= ingredient.local_name %></p>
                           <% end %>
                          <h6>description:</h6>
                           <p><%= medication.foreign_description %></p>
@@ -83,7 +83,7 @@
             <%= link_to medication_comparison_path(medication.id),class:"no-border-focus", data: {toggle:"modal", target:"#medication_#{medication.id}" } do %>
           <%= cl_image_tag(medication.photo, class: "carousel-img")%>
           <div class='carousel-medium-card-description'>
-              <h2><%= medication.local_name %></h2>
+              <h2><%= medication.english_name %></h2>
             <% end %>
 
             <% medication.ingredients.each do |ingredient| %>

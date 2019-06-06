@@ -5,10 +5,16 @@
   }
 
  .title-dashboard {
-  font-size: 20px;
-  text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: $light-gray;
+  margin-top:15px;
+  font-weight:600;
+  font-size: 1rem;
+  text-align:left;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $accent-font;
  }
 
  .mf-button {
@@ -18,7 +24,10 @@
 }
 
 .fa-trash-alt {
-  color: $light-gray;
+  color: $green-secondary;
+  position: relative;
+  top: 49px;
+  left: -11px;
 }
 
 #favourites-tabs {
@@ -29,12 +38,13 @@
 .mf-medium-card-test {
   align-items:center;
   display:flex;
-  height:140px;
+  height:auto;
   box-shadow: 0 5px 9px rgba(0,0,0,.08);
   border: 1px solid #deeecb;
   background: #fff;
   border-radius: 3px;
   margin-bottom: 10px;
+  margin-top: 20px;
   img {
     width: 40%;
     height:60%;
