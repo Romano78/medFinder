@@ -10,7 +10,7 @@ const initMapbox = () => {
   if (mapElement) { // only build a map if there's a div#map to inject into
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    navigator.geolocation.getCurrentPosition((data) => {
+    // navigator.geolocation.getCurrentPosition((data) => {
       fetch(`/map/nearby_pharmacy?lat=${55.7558}&lng=${37.6173}`)
         .then(response => response.json())
         .then((pharmacyData) => {
@@ -62,7 +62,7 @@ const initMapbox = () => {
           setTimeout(()=> {
             fitMapToMarkers(map, [...pharmacyData, user]);
           }, 500);
-        });
+        // });
     })
   }
 };
