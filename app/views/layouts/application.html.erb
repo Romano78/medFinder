@@ -12,7 +12,7 @@
     <% stylesheet_pack_tag 'application', media: 'all' %>
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+  <body style="max-width: 100vw !important; overflow-x: hidden;">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
