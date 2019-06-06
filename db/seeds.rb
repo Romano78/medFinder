@@ -29,19 +29,19 @@ ibuprofen = Medication.create!(
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Used for treating pain, fever, and inflammation.",
-  foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
+  local_description: "For the treatment of pain, fever, and inflammation.",
+  foreign_description: "Для лечения боли, лихорадки и воспаления.",
   photo: File.open("./app/assets/images/russia/IbuprofenRuss.png")
 )
 
 ibuprofen_enfant = Medication.create!(
   local_name: "Ибупрофен для детей ",
-  english_name: "Ibuprofen Kid",
+  english_name: "Ibuprofen Kids",
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Used for treating pain, fever, and inflammation.",
-  foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
+  local_description: "For the treatment of pain, fever, and inflammation. Safe for use by children.",
+  foreign_description: "Для лечения боли, лихорадки и воспаления. Безопасен для использования детьми.",
   photo: File.open("./app/assets/images/russia/Ibuprofe_enfant.png")
 )
 
@@ -51,8 +51,8 @@ ibuprofen_gel = Medication.create!(
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Used for treating pain, fever, and inflammation.",
-  foreign_description: "Используется для лечения боли, лихорадки и воспаления.",
+  local_description: "For the treatment of pain, fever, and inflammation.",
+  foreign_description: "Для лечения боли, лихорадки и воспаления.",
   photo: File.open("./app/assets/images/russia/Ibuprofen_gel_new.png")
 )
 
@@ -62,8 +62,8 @@ paracetamol = Medication.create!(
   country: "RU",
   local_category: "Pain Relievers",
   foreign_category: "Обезболивающие",
-  local_description: "Used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.",
-  foreign_description: "Используется для лечения многих состояний, таких как головная боль, мышечные боли, артрит, боль в спине, зубная боль, простуда и лихорадка.",
+  local_description: "For the treatment of headaches, muscle & joint pain, arthritis, toothaches, colds, and fevers.",
+  foreign_description: "Для лечения головных болей, мышц и суставов, артрита, зубной боли, простуды и лихорадки.",
   photo: File.open("./app/assets/images/russia/NewParace.png")
 
 )
@@ -74,8 +74,8 @@ nurofen = Medication.create!(
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Provides temporary relief of acute moderate pain and inflammation.",
-  foreign_description: "используется для лечения боли, лихорадки и воспаления.",
+  local_description: "For the treatment of pain, fever, and inflammation.",
+  foreign_description: "Для лечения боли, лихорадки и воспаления.",
   photo: File.open("./app/assets/images/russia/NewNuro.png")
 )
 
@@ -85,8 +85,8 @@ nurofen_forte = Medication.create!(
   country: "RU",
   local_category: "Anti-Inflammatory",
   foreign_category: "противовоспалительное",
-  local_description: "Used to relieve the symptoms of arthritis, fever, and menstrual and other types of pain.",
-  foreign_description: "используется для облегчения симптомов артрита, лихорадки и менструальных и других видов боли.",
+  local_description: "For quick relief of arthritic pain, menstrual pain, headaches, and muscle & joint pain.",
+  foreign_description: "Для быстрого облегчения боли при артрите, менструальной боли, головных болях, мышцах и суставах.",
   photo: File.open("./app/assets/images/russia/NewNuroF.png")
 )
 
@@ -97,8 +97,8 @@ tussin_plus = Medication.create!(
   country: "RU",
   local_category: "Cough Suppressants",
   foreign_category: "средства от кашля",
-  local_description: "Cough Suppressant that works by decreasing the feeling of needing to cough.",
-  foreign_description: "Подавитель кашля, который работает, уменьшая чувство необходимости кашлять.",
+  local_description: "For relief of cough symptoms.",
+  foreign_description: "Для облегчения симптомов кашля.",
   photo: File.open("./app/assets/images/russia/TussinNew.png")
 )
 
@@ -108,8 +108,8 @@ caffetin_cold = Medication.create!(
   country: "RU",
   local_category: "Cough Suppressants",
   foreign_category: "средства от кашля",
-  local_description: "Caffetin Cold is used to relieve symptoms of colds and flu (headache, muscle aches, sore throat, nose leakage, fever or cough).",
-  foreign_description: "Подавитель кашля, который работает, уменьшая чувство необходимости кашлять.",
+  local_description: "For relief of cold and flu symptoms, including headache, muscle & joint pain, sore throat, runny nose, fever, and cough.",
+  foreign_description: "Для облегчения симптомов простуды и гриппа, включая головную боль, боль в мышцах и суставах, боль в горле, насморк, жар и кашель.",
   photo: File.open("./app/assets/images/russia/NewCaffetin.png")
 )
 
@@ -119,13 +119,13 @@ imodium = Medication.create!(
   country: "RU",
   local_category: "Antidiarrheal Agents",
   foreign_category: "антидиарейные препараты",
-  local_description: "Imodium ® - lozenges that quickly and carefully stop diarrhea. They have a pleasant mint flavor and dissolve in the mouth in 2-3 seconds.",
-  foreign_description: "быстро и осторожно прекратите диарею. Они имеют приятный мятный вкус и растворяются во рту за 2-3 секунды.",
+  local_description: "Quick relief of diarrhea symptoms.",
+  foreign_description: "Быстрое облегчение симптомов диареи.",
   photo: File.open("./app/assets/images/russia/NewImod.png")
 )
 
 russian_vodka = Medication.create!(
-  local_name: "Belugia",
+  local_name: "Beluga",
   country: "RU",
   local_category: "Natural Pain Killer",
   local_description:"The excessive consumption of alcohol can cause harm to your health.",
@@ -141,7 +141,7 @@ advil = Medication.create!(
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "Used for treating pain, fever, and inflammation.",
+  local_description: "For the treament of pain, fever, and inflammation.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/Advil caplets.png")
 )
@@ -152,7 +152,7 @@ advil_gel = Medication.create!(
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "Used for treating pain, fever, and inflammation.",
+  local_description: "For the treatment of pain, fever, and inflammation.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/advilPm.png")
 )
@@ -164,7 +164,7 @@ tylenol = Medication.create!(
   country: "CA",
   local_category: "Pain Relievers",
   foreign_category: "",
-  local_description: "Used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers.",
+  local_description: "For the treatment of headaches, muscle & joint pain, arthritis, toothaches, colds, and fevers.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/Tylenol.png")
 
@@ -174,9 +174,9 @@ benylin = Medication.create!(
   local_name: "Benylin",
   english_name: "Benylin",
   country: "CA",
-  local_category: "Cough Suppressants.",
+  local_category: "Cough Suppressants",
   foreign_category: "средства от кашля.",
-  local_description: "Relief of symptoms of colds, flu, ARVI, accompanied by cough.",
+  local_description: "For the treament of coughs, and other cold and flu symptoms.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/Benylinpng.png")
 )
@@ -187,7 +187,7 @@ robitussin = Medication.create!(
   country: "CA",
   local_category: "Cough Suppressants",
   foreign_category: "",
-  local_description: "Relief of symptoms of colds, flu, ARVI, accompanied by cough",
+  local_description: "For the treament of coughs, and other cold and flu symptoms.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/robitussin.png")
 
@@ -199,7 +199,7 @@ imodiumCanada = Medication.create!(
   country: "CA",
   local_category: "Antidiarrheal Agents",
   foreign_category: "",
-  local_description: "IMODIUM® Canada - lozenges that quickly and carefully stop diarrhea. They have a pleasant mint flavor and dissolve in the mouth in 2-3 seconds.",
+  local_description: "Quick relief of diarrhea symptoms. Mint flavoured.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/Newimo.png")
 
