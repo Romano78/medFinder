@@ -139,7 +139,7 @@ puts "Creating Canadian medications"
 
 advil = Medication.create!(
   local_name: "Advil PM",
-  english_name: "Advil",
+  english_name: "Advil PM",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -148,8 +148,8 @@ advil = Medication.create!(
   photo: File.open("./app/assets/images/canada/AdvilPm.png")
 )
 advil_12 = Medication.create!(
-  local_name: "Advil 12 Hours",
-  english_name: "Advil 12 Hours",
+  local_name: "Advil",
+  english_name: "Advil",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -159,8 +159,8 @@ advil_12 = Medication.create!(
 )
 
 advil_gel = Medication.create!(
-  local_name: "Advil Liqui-Gels",
-  english_name: "Advil Liqui-Gels",
+  local_name: "Advil Gels",
+  english_name: "Advil Gels",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -170,8 +170,8 @@ advil_gel = Medication.create!(
 )
 
 advil_multi = Medication.create!(
-  local_name: "Advil Multi Symptom Cold & Flu",
-  english_name: "Advil Multi Symptom Cold & Flu",
+  local_name: "Advil Multi",
+  english_name: "Advil Multi",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -181,8 +181,8 @@ advil_multi = Medication.create!(
 )
 
 life_brand = Medication.create!(
-  local_name: "Life Brand Ibuprofen",
-  english_name: "Life Brand Ibuprofen",
+  local_name: "Life Brand",
+  english_name: "Life Brand",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
@@ -203,8 +203,8 @@ motrin = Medication.create!(
 )
 
 motrin_infants‎ = Medication.create!(
-  local_name: "Motrin For Infants‎",
-  english_name: "Motrin",
+  local_name: "Motrin Kids",
+  english_name: "Motrin Kids",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
