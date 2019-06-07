@@ -18,23 +18,25 @@
         </ul>
         <div class="tab-content">
            <div class="tab-pane fade show active" id="pills-favourite-<%= index %>" role="tabpanel" aria-labelledby="pills-favourite-<%= index %>-tab">
-            <div class="mf-medium-card-test">
-              <%= cl_image_tag (favorite.medication.photo) %>
-              <div class="medium-card-description py-0">
-                <h5><%= favorite.medication.local_name %></h5>
-                <h6>category:</h6>
-                  <p><%= favorite.medication.foreign_category %></p>
-                <% favorite.medication.ingredients.each do |ingredient| %>
-                  <h6>active ingredient:</h6>
-                    <p><%= ingredient.local_name %></p>
-                <% end %>
-              </div>
-              <div class="text-right">
+
+              <div class="mf-medium-card-test">
+                <%= cl_image_tag (favorite.medication.photo) %>
+                <div class="medium-card-description py-0">
+                  <h5><%= favorite.medication.local_name %></h5>
+                  <h6>category:</h6>
+                    <p><%= favorite.medication.foreign_category %></p>
+                  <% favorite.medication.ingredients.each do |ingredient| %>
+                    <h6>active ingredient:</h6>
+                      <p><%= ingredient.local_name %></p>
+                  <% end %>
+                </div>
                 <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete  do %>
-                  <i class="fas fa-trash-alt align-bottom"></i>
+                  <i class="fas fa-trash-alt"></i>
                 <% end %>
+  <!--               <div class="text-right">
+                </div> -->
               </div>
-            </div>
+
           </div>
           <% unless favorite.home_medication_id.nil? %>
 
@@ -43,19 +45,17 @@
              <div class="mf-medium-card-test">
                 <%= cl_image_tag(home_med.photo) %>
                 <div class=medium-card-description>
-                <h5><%= home_med.local_name %></h5>
-                <h6>category:</h6>
-                  <p><%= home_med.local_category %></p>
-                <% home_med.ingredients.each do |ingredient| %>
-                  <h6>active ingredient:</h6>
-                    <p><%= ingredient.name %></p>
-                <% end %>
+                  <h5><%= home_med.local_name %></h5>
+                  <h6>category:</h6>
+                    <p><%= home_med.local_category %></p>
+                  <% home_med.ingredients.each do |ingredient| %>
+                    <h6>active ingredient:</h6>
+                      <p><%= ingredient.name %></p>
+                  <% end %>
                 </div>
-                 <div class="text-right">
                 <%= link_to medication_favorite_path(favorite.medication,favorite),method: :delete  do %>
-                  <i class="fas fa-trash-alt align-bottom"></i>
+                  <i class="fas fa-trash-alt"></i>
                 <% end %>
-              </div>
               </div>
 
           </div>

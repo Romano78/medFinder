@@ -1,8 +1,6 @@
-img {
-  max-width: 100%;
-}
 .mf-big-card {
 display: flex;
+align-items:center;
 flex-direction: column;
 justify-content: center;
 font-family: $body-font;
@@ -41,6 +39,9 @@ h6{
 p{
   font-weight:300;
   font-size: .7rem;
+}
+img {
+  max-width: 100%;
 }
 }
 
