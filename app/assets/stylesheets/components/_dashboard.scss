@@ -1,4 +1,6 @@
 .container-dashboard {
+  // 111px because header + footer + margin-top of h1
+  min-height: calc(100vh - 111px) !important;
   .mf-medium-card {
     height: 300px;
     margin-bottom: 10px;
