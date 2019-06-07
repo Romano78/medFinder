@@ -138,25 +138,79 @@ russian_vodka = Medication.create!(
 puts "Creating Canadian medications"
 
 advil = Medication.create!(
-  local_name: "Advil",
+  local_name: "Advil PM",
   english_name: "Advil",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "For the treament of pain, fever, and inflammation.",
+  local_description: "For the treament of pain, fever, and inflammation.  can cause drowsiness, which can aid in the treatment of occasional sleep problems (insomnia). ",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/Advil caplets.png")
+  photo: File.open("./app/assets/images/canada/AdvilPm.png")
 )
-
-advil_gel = Medication.create!(
-  local_name: "Advil Gels PM",
-  english_name: "Advil Gels PM",
+advil_12 = Medication.create!(
+  local_name: "Advil 12 Hours",
+  english_name: "Advil 12 Hours",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "For the treatment of pain, fever, and inflammation.",
+  local_description: "Dual-layer technology for up to 12 hours of pain relief with one pill. A quick burst for relief that's fast. ",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/Advil_Pill-2.png")
+)
+
+advil_gel = Medication.create!(
+  local_name: "Advil Liqui-Gels",
+  english_name: "Advil Liqui-Gels",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Provide fast relief of headaches, muscle aches, minor arthritis and other joint pain.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/Adivil_liqui1.png")
+)
+
+advil_multi = Medication.create!(
+  local_name: "Advil Multi Symptom Cold & Flu",
+  english_name: "Advil Multi Symptom Cold & Flu",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "pain reliever now comes with eight-symptom relief for nasal congestion, nasal swelling, runny nose, sneezing, sinus pressure, headache, fever and body aches.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/Advil_Multi.png")
+)
+
+life_brand = Medication.create!(
+  local_name: "Life Brand Ibuprofen",
+  english_name: "Life Brand Ibuprofen",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Used to treat fever and mild-to-moderate pain caused by inflammation.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/LifeBrand.png")
+)
+
+motrin = Medication.create!(
+  local_name: "Motrin",
+  english_name: "Motrin",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Used to reduce fever and treat pain or inflammation caused by many conditions such as headache, toothache, back pain, arthritis, menstrual cramps, or minor injury.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/Mortin.png")
+)
+
+motrin_infants‎ = Medication.create!(
+  local_name: "Motrin For Infants‎",
+  english_name: "Motrin",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: " used to reduce fevers. It also helps ease pain due to the common cold, sore throat, toothaches, and injuries.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/ChildrenMotrin.png")
 )
 
 
@@ -245,7 +299,7 @@ MedicationsIngredient.create!(
 )
 
 MedicationsIngredient.create!(
-  ingredient_id: dextromethorphan.id,
+  ingredient_id: ibuprofen_ingredient.id,
   medication_id: russian_vodka.id
 )
 MedicationsIngredient.create!(
@@ -323,6 +377,31 @@ MedicationsIngredient.create!(
 MedicationsIngredient.create!(
   ingredient_id: ibuprofen_ingredient.id,
   medication_id: advil_gel.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: advil_multi.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: advil_12.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: life_brand.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: motrin.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: motrin_infants‎.id
 )
 
 
