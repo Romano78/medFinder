@@ -145,7 +145,7 @@ advil = Medication.create!(
   foreign_category: "",
   local_description: "For the treament of pain, fever, and inflammation.  can cause drowsiness, which can aid in the treatment of occasional sleep problems (insomnia). ",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/AdvilPm.png")
+  photo: File.open("./app/assets/images/canada/advilPm.png")
 )
 advil_12 = Medication.create!(
   local_name: "Advil",
