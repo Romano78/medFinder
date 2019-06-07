@@ -147,6 +147,16 @@ advil = Medication.create!(
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/AdvilPm.png")
 )
+advil_12 = Medication.create!(
+  local_name: "Advil 12 Hours",
+  english_name: "Advil 12 Hours",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Dual-layer technology for up to 12 hours of pain relief with one pill. A quick burst for relief that's fast. ",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/Advil_Pill-2.png")
+)
 
 advil_gel = Medication.create!(
   local_name: "Advil Liqui-Gels",
@@ -156,7 +166,7 @@ advil_gel = Medication.create!(
   foreign_category: "",
   local_description: "Provide fast relief of headaches, muscle aches, minor arthritis and other joint pain.",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/Adivil_liqui1.png")
 )
 
 advil_multi = Medication.create!(
@@ -167,7 +177,7 @@ advil_multi = Medication.create!(
   foreign_category: "",
   local_description: "pain reliever now comes with eight-symptom relief for nasal congestion, nasal swelling, runny nose, sneezing, sinus pressure, headache, fever and body aches.",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/Advil_Multi.png")
 )
 
 life_brand = Medication.create!(
@@ -178,7 +188,7 @@ life_brand = Medication.create!(
   foreign_category: "",
   local_description: "Used to treat fever and mild-to-moderate pain caused by inflammation.",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/LifeBrand.png")
 )
 
 motrin = Medication.create!(
@@ -189,10 +199,10 @@ motrin = Medication.create!(
   foreign_category: "",
   local_description: "Used to reduce fever and treat pain or inflammation caused by many conditions such as headache, toothache, back pain, arthritis, menstrual cramps, or minor injury.",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/Mortin.png")
 )
 
-motrin_infants‎= Medication.create!(
+motrin_infants‎ = Medication.create!(
   local_name: "Motrin For Infants‎",
   english_name: "Motrin",
   country: "CA",
@@ -200,7 +210,7 @@ motrin_infants‎= Medication.create!(
   foreign_category: "",
   local_description: " used to reduce fevers. It also helps ease pain due to the common cold, sore throat, toothaches, and injuries.",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/advilPm.png")
+  photo: File.open("./app/assets/images/canada/ChildrenMotrin.png")
 )
 
 
@@ -289,7 +299,7 @@ MedicationsIngredient.create!(
 )
 
 MedicationsIngredient.create!(
-  ingredient_id: dextromethorphan.id,
+  ingredient_id: ibuprofen_ingredient.id,
   medication_id: russian_vodka.id
 )
 MedicationsIngredient.create!(
@@ -367,6 +377,31 @@ MedicationsIngredient.create!(
 MedicationsIngredient.create!(
   ingredient_id: ibuprofen_ingredient.id,
   medication_id: advil_gel.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: advil_multi.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: advil_12.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: life_brand.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: motrin.id
+)
+
+MedicationsIngredient.create!(
+  ingredient_id: ibuprofen_ingredient.id,
+  medication_id: motrin_infants‎.id
 )
 
 
