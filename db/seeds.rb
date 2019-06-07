@@ -138,23 +138,67 @@ russian_vodka = Medication.create!(
 puts "Creating Canadian medications"
 
 advil = Medication.create!(
-  local_name: "Advil",
+  local_name: "Advil PM",
   english_name: "Advil",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "For the treament of pain, fever, and inflammation.",
+  local_description: "For the treament of pain, fever, and inflammation.  can cause drowsiness, which can aid in the treatment of occasional sleep problems (insomnia). ",
   foreign_description: "",
-  photo: File.open("./app/assets/images/canada/Advil caplets.png")
+  photo: File.open("./app/assets/images/canada/AdvilPm.png")
 )
 
 advil_gel = Medication.create!(
-  local_name: "Advil Gels PM",
-  english_name: "Advil Gels PM",
+  local_name: "Advil Liqui-Gels",
+  english_name: "Advil Liqui-Gels",
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "For the treatment of pain, fever, and inflammation.",
+  local_description: "Provide fast relief of headaches, muscle aches, minor arthritis and other joint pain.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/advilPm.png")
+)
+
+advil_multi = Medication.create!(
+  local_name: "Advil Multi Symptom Cold & Flu",
+  english_name: "Advil Multi Symptom Cold & Flu",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "pain reliever now comes with eight-symptom relief for nasal congestion, nasal swelling, runny nose, sneezing, sinus pressure, headache, fever and body aches.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/advilPm.png")
+)
+
+life_brand = Medication.create!(
+  local_name: "Life Brand Ibuprofen",
+  english_name: "Life Brand Ibuprofen",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Used to treat fever and mild-to-moderate pain caused by inflammation.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/advilPm.png")
+)
+
+motrin = Medication.create!(
+  local_name: "Motrin",
+  english_name: "Motrin",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: "Used to reduce fever and treat pain or inflammation caused by many conditions such as headache, toothache, back pain, arthritis, menstrual cramps, or minor injury.",
+  foreign_description: "",
+  photo: File.open("./app/assets/images/canada/advilPm.png")
+)
+
+motrin_infants‎= Medication.create!(
+  local_name: "Motrin For Infants‎",
+  english_name: "Motrin",
+  country: "CA",
+  local_category: "Anti-Inflammatory",
+  foreign_category: "",
+  local_description: " used to reduce fevers. It also helps ease pain due to the common cold, sore throat, toothaches, and injuries.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/advilPm.png")
 )
