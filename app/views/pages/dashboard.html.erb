@@ -7,12 +7,12 @@
 
         <ul class="nav nav-pills dashboard-pills" id="pills-tab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="pills-favourite-<%= index %>-tab" data-toggle="pill" href="#pills-favourite-<%= index %>" role="tab" aria-controls="pills-favourite-<%= index %>" aria-selected="true">Favourite</a>
+            <a class="nav-link active" id="pills-favourite-<%= index %>-tab" data-toggle="pill" href="#pills-favourite-<%= index %>" role="tab" aria-controls="pills-favourite-<%= index %>" aria-selected="true">Russian Equivalent</a>
           </li>
           <% unless favorite.home_medication_id.nil? %>
           <% home_med =  Medication.find(favorite.home_medication_id) %>
             <li class="nav-item">
-              <a class="nav-link" id="pills-home-version-<%= index.to_s + home_med.id.to_s %>-tab" data-toggle="pill" href="#pills-home-version-<%= index.to_s + home_med.id.to_s %>" role="tab" aria-controls="pills-home-version-<%= index.to_s + home_med.id.to_s %>" aria-selected="false">Home version</a>
+              <a class="nav-link" id="pills-home-version-<%= index.to_s + home_med.id.to_s %>-tab" data-toggle="pill" href="#pills-home-version-<%= index.to_s + home_med.id.to_s %>" role="tab" aria-controls="pills-home-version-<%= index.to_s + home_med.id.to_s %>" aria-selected="false">Home Reference</a>
             </li>
           <% end %>
         </ul>

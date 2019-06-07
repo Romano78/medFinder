@@ -175,7 +175,7 @@ advil_multi = Medication.create!(
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: "pain reliever now comes with eight-symptom relief for nasal congestion, nasal swelling, runny nose, sneezing, sinus pressure, headache, fever and body aches.",
+  local_description: "Pain reliever now comes with eight-symptom relief for nasal congestion, nasal swelling, runny nose, sneezing, sinus pressure, headache, fever and body aches.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/Advil_Multi.png")
 )
@@ -208,7 +208,7 @@ motrin_infants‎ = Medication.create!(
   country: "CA",
   local_category: "Anti-Inflammatory",
   foreign_category: "",
-  local_description: " used to reduce fevers. It also helps ease pain due to the common cold, sore throat, toothaches, and injuries.",
+  local_description: "Used to reduce fevers. It also helps ease pain due to the common cold, sore throat, toothaches, and injuries.",
   foreign_description: "",
   photo: File.open("./app/assets/images/canada/ChildrenMotrin.png")
 )
@@ -277,7 +277,7 @@ ibuprofen_ingredient = Ingredient.create!(
 )
 
 liqueur_ingredient = Ingredient.create!(
-name: 'liquor',
+name: 'Liquor',
 local_name: "щелок"
 )
 
@@ -289,7 +289,7 @@ local_name: "декстрометорфан"
 )
 
 loperamide = Ingredient.create!(
-  name: "loperamide",
+  name: "Loperamide",
   local_name: "лоперамид"
 )
 
