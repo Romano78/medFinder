@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
   def index
     session[:query] = params[:query]
     if params[:query].present?
-      @medications = Medication.search(params[:query]).sort_by { |med| - med.id }
+      @medications = Medication.search_by_title_and_syllabus(params[:query]).sort_by { |med| - med.id }
       @medications = @medications.select { |medication| medication.country == session[:home_country] }
     else
       @medications = Medication.all.order(:id)

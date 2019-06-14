@@ -405,7 +405,7 @@ MedicationsIngredient.create!(
 )
 
 
-Medication.reindex!
+# Medication.reindex!
 
 
 
